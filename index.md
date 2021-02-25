@@ -7,12 +7,14 @@ Hello World
 1. first thing
 2. second thing 
 
+Hello world 
+
 1. one 
 1. one 
 11. eleven 
 1111. should render as sequential numbers 
 
-The course webpage is found [here] (https://gis4dev.github.io).
+The course webpage is found [here](https://gis4dev.github.io).
 
 _HOWEVER_ Github usually takes a few minutes, maybe even 10 minutes, to render new changes to your webpage.
 
