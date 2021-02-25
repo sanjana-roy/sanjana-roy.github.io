@@ -1,4 +1,3 @@
-
 ---
 title: Main Page
 layout: default
