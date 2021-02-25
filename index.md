@@ -5,7 +5,8 @@ layout: default
 
 
 # Sanjana Roy's Open Source GIS Portfolio 
-Hello World 
+
+## GIScience Analyses
 
 - [Gravity Model of Spatial Interaction](gravity/gravity.md)
 - item number two 
