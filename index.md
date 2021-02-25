@@ -1,7 +1,7 @@
 # Sanjana Roy's Open Source GIS Portfolio 
 Hello World 
 
-- item number one 
+- [Gravity Model of Spatial Interaction](gravity/gravity.md)
 - item number two 
 
 1. first thing
