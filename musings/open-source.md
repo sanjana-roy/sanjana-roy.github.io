@@ -3,9 +3,7 @@ layout: page
 title: What is Open Source GIScience?
 ---
 
-This is a reflection on readings regarding Open Source GIScience for Friday, February 26th.
-
-![OSGeo Logo](logo-osgeo.svg)(https://www.osgeo.org/).
+**This is a reflection on readings regarding Open Source GIScience for Friday, February 26th.**
 
 The Open-source software community is considered an “innovation” or “gift” community as it provides access to not only the software tools but also the code behind the technology and the freedom to experiment with and distribute it. As Rey (2009) and Singleton et al. (2015) mention, there are numerous benefits of Open-Source software to both students and wider academia over simply free software: the ability to understand and assess the software code, to identify errors and limitations in algorithms in the context of specific research efforts, to further develop the software for new research purposes. By its very nature of open access, this kind of software encourages learning and innovation. Therefore, the role of Open-Source software at academic institutions, and more specifically, at an undergraduate liberal arts college, in contrast to proprietary software, forms a unique place in the learning opportunities it offers students.
 
@@ -15,7 +13,7 @@ In a world where hierarchies exist in both academic environments, it becomes dif
 
 
 
-![OSGeo Logo](logo-osgeo.svg)(https://www.osgeo.org/).
+[!OSGeo Logo](logo-osgeo.svg)(https://www.osgeo.org/).
 
 Rey, S. J. 2009. Show me the code: spatial analysis and open source. Journal of Geographical Systems 11 (2):191–207. http://dx.doi.org/10.1007/s10109-009-0086-8
 
