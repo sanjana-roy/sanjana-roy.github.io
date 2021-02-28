@@ -13,7 +13,7 @@ In a world where hierarchies exist in both academic environments, it becomes dif
 
 
 
-[![OSGeo Logo](logo-osgeo.svg)(https://www.osgeo.org/).
+[![OSGeo Logo](logo-osgeo.svg)(https://www.osgeo.org/)]
 
 *Rey, S. J. 2009. Show me the code: spatial analysis and open source. Journal of Geographical Systems 11 (2):191–207. http://dx.doi.org/10.1007/s10109-009-0086-8*
 
