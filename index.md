@@ -9,11 +9,11 @@ layout: default
 ## GIScience Analyses
 
 - [Gravity Model of Spatial Interaction](gravity/gravity.md)
-- item number two
+- 
 
 The course webpage is found [here](https://gis4dev.github.io).
 
 ## Musings
 
 - [What is Open Source GIScience?](musings/open-source.md)
-- another feature
+- [GIS as Reproducible Science](musings/GIScience-reproducibility.md)
