@@ -4,16 +4,19 @@ layout: default
 ---
 
 
-# Sanjana Roy's Open Source GIS Portfolio
+# GEOG 323: OpenSource GIScience | [Course Website](https://gis4dev.github.io)
+
+Hi, my name is Sanjana and I'm an Architecture and Environmental Studies joint major and Biology minor at Middlebury College. As someone interested in how urban and natural environments correlate, I find GIS to be a very useful skill to develop. This website is a documentation of the projects I have done under the OpenSource GIScience course, and reflections on the material we are working with as well as wider questions in the open-source and GIS fields.
+
+
 
 ## GIScience Analyses
 
 - [Gravity Model of Spatial Interaction](gravity/gravity.md)
-- 
 
-The course webpage is found [here](https://gis4dev.github.io).
 
-## Musings
+## Course Blog Posts
 
 - [What is Open Source GIScience?](musings/open-source.md)
 - [GIS as Reproducible Science](musings/GIScience-reproducibility.md)
+- [Error and Uncertainty](musings/ErrorUncertainty.md)
