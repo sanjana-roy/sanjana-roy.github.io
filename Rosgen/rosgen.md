@@ -14,14 +14,14 @@ and Replication by: Kasprak, A., N. Hough-Snee, T. Beechie, N. Bouwes, G. Brierl
 Replication Authors:
 Sanjana Roy, Zach Hilgendorf, Joseph Holler, and Peter Kedron.
 
-Replication Materials Available at: [RE-Rosgen](https://github.com/sanjana-roy/RE-rosgen)
+Replication Materials Available at: [RE-Rosgen (forked repository)](https://github.com/sanjana-roy/RE-rosgen)
 
 Created: `24 March 2021`
 Revised: `25 March 2021`
 
 ## Introduction
 
-This study attempts to use the Rosgen Stream Classification System (RCS), which is a method classifying streams and rivers based on their form and morphology at a particular moment in time, through replicating findings from the Kasprak et al. (2016) study of the Middle Fork John Day Basin (MFJD), a watershed of high conservation interest within the Columbia River Basin. The Rosgen classification attempts to “provide a consistent and reproducible frame of reference of communication for those working with river systems in a variety of professional disciplines” (Rosgen, 1994). It uses four hierarchical stages of classification under two ‘Levels’. Level 1 utilizes morphological ratios of rivers, such as entrenchment, width/depth, and sinuosity, from variables observed and calculated through site measurements, like bankfull width, bankfull depth, valley width, valley length, channel length, etc. Level 2 utilizes characteristics, such as the slope of the valley and channel material, to further determine classification. There has been an increase in the use of GIS in aiding to classify streams according to their aforementioned characteristics, however, its application has not been standardized. As RCS is “arguably the most commonly used stream classification system in North America and the world,” its replication through GIS modelling would be particularly helpful through applications in river maintenance, flood control, channel and riparian protection and restoration, impact assessment, etc. (Kasprak et al., 2016).
+This study attempts to use the Rosgen Stream Classification System (RCS), which is a method classifying streams and rivers based on their form and morphology at a particular moment in time, through replicating findings from the Kasprak et al. (2016) study of the Middle Fork John Day Basin (MFJD), a watershed of high conservation interest within the Columbia River Basin. The Rosgen classification attempts to “provide a consistent and reproducible frame of reference of communication for those working with river systems in a variety of professional disciplines” (Rosgen, 1994). It uses four hierarchical stages of classification under four different ‘Levels', of which this study focuses on the first two. Level 1 utilizes morphological ratios of rivers, such as entrenchment, width/depth, and sinuosity, from variables observed and calculated through site measurements, like bankfull width, bankfull depth, valley width, valley length, channel length, etc. Level 2 utilizes characteristics, such as the slope of the valley and channel material, to further determine classification. There has been an increase in the use of GIS in aiding to classify streams according to their aforementioned characteristics, however, its application has not been standardized. As RCS is “arguably the most commonly used stream classification system in North America and the world,” its replication through GIS modelling would be particularly helpful through applications in river maintenance, flood control, channel and riparian protection and restoration, impact assessment, etc. (Kasprak et al., 2016).
 
 Therefore, this study attempts to create and practice a method of replicability of the Rosgen Classification System using high resolution terrain models to classify sections of streams and rivers, or “reaches.” We attempt to replicate the RCS analysis of Kasprak et al.’s (2016) study, which compared four different classification methods at the MFJD watershed scale.
 
@@ -30,13 +30,17 @@ Figure 1. Level I and II of the Rosgen Classification System
 
 ## Data
 
+The metatdata and data files can be found [here](https://github.com/sanjana-roy/RE-rosgen/tree/main/data/metadata)].
+
 ### CHaMP Data
-Kasprak et al. (2016) uses the Columbia Habitat Monitoring Program (CHaMP) data, collected as a result of aquatic-habitat monitoring in the watershed of the Columbia River Basin. This data contains information on reaches, of which details were collected during 2012 and 2013, at wadable, perennial streams selected through random sampling. Each reach includes information on channel bankfull width and depth, gradient, substrate, and sinuosity. Each sampled reach is twenty times as long as the bankfull channel width at each site (120-360 m in length).
+The Columbia Habitat Monitoring Program (CHaMP) has collected data from the 26 watersheds around the Columbia River basin in order to generate and implement a set of standard methods for monitoring fish habitat. This data, which is a subset of the original, includes points from the John Day River (MFJD) in the state of Oregon, USA. It contains information on reaches, of which details were collected during 2012 and 2013, at wadable, perennial streams selected through random sampling. Each reach includes information on channel bankfull width and depth, gradient, substrate, and sinuosity. Each sampled reach is twenty times as long as the bankfull channel width at each site (120-360 m in length).
 
 ### John Day Watershed Data
-We also utilised LiDAR data of the MFJD Watershed collected in 2008, as part of the Camp Creek LIDAR Project.
+This is the John Day River watershed LiDAR DEM with a resolution of 1m, collected between Aug 19th and 27th, 2008. This is also a clipped version of the original dataset, focusing on the Middle Fork of the John Day River, encompassing the CHaMP points mentioned above.
 
 ## Methods
+
+Procedures followed in this analysis can be found [here](https://github.com/sanjana-roy/RE-rosgen/tree/main/procedure). Analysis was done on a MacOS (v. 10.15.5) and required the installation of [The Unarchiver](https://theunarchiver.com/) and [XCode](https://idmsa.apple.com/IDMSWebAuth/signin?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Fdownload%2Fmore%2F&rv=1).
 
 ### Kasprak et al. (2016) Analysis
 Kasprak et al. (2016) classified 33 CHaMP reaches in the MFJD Basin using Levels I and II of the RCS.
@@ -47,21 +51,28 @@ The study used DEMs of grid resolutions 10m and 0.1m, aerial imagery, and ground
 As a class, we were randomly assigned 17 CHaMP points to classify through replication of the Kasprak et al.(2016) methods. I was assigned the Granite Boulder Creek stream (loc_id = 10) to analyse.
 
 ![Image of watershed and points](assets/aoi.jpg)
+Figure 2. State of Oregon, USA, with the Middle Fork John Day River outlined in black and CHaMP sites.
 
-We used GRASS GIS (7.8.5 for MacOS) for the processing of the two layers of data, the CHaMP points and the MFJD Watershed tif file. [A model](https://github.com/sanjana-roy/RE-rosgen/blob/main/procedure/code/visualize.gxm) was used to create buffer zones around the CHaMP survey points, as Rosgen (1994) suggests analyzing a distance of 20 channel widths, applied in the distance settings. The model also uses the LiDAR MFJD image to create a Digital Elevation Model (DEM) with colors and hillshade.
+We used GRASS GIS (7.8.5 for MacOS) for the processing of the two layers of data, the CHaMP points and the MFJD Watershed tif file. [A model](https://github.com/sanjana-roy/RE-rosgen/blob/main/procedure/code/visualize.gxm) was used to create buffer zones around the CHaMP survey points, as Rosgen (1994) suggests analyzing a distance of 20 channel widths, applied in the distance settings. The model also uses the LiDAR MFJD image to create a Digital Elevation Model (DEM) with colors, hillshade, and slope layers.
 
 ![Image of Model1](assets/vizualize_model.png)
+Figure 3. Model 1 workflow
 ![Image of Map Study Site Elevation](assets/map_elevation.png)
+Figure 4. Map of Study Site Elevation
 ![Image of Map Study Site Slope](assets/map_slope2.png)
+Figure 5. Map of Study Site Slope
 
-The stream banks and valley edges were manually digitized with respect to the buffer at a scale of 1:1500. This digitization was done three times for both the banks and valley edges. [A second model](https://github.com/sanjana-roy/RE-rosgen/blob/main/procedure/code/center_line_length_no_clip.gxm) was then used to find the averages of each set of lines as well as the “average of the average,” providing us with a final banks line and valley line.
+The stream banks and valley edges were manually digitized with respect to the length of the buffer at a scale of 1:1500. This digitization was done three times for both the banks and valley edges. [A second model](https://github.com/sanjana-roy/RE-rosgen/blob/main/procedure/code/center_line_length_no_clip.gxm) was then used to find the averages of each set of lines as well as the “average of the average,” providing us with a final banks line and valley line. As the valley lines fell outside the radius of the buffer, we did not use a clip function to calculate the centerlines, as shown in the workflow, but used the raw digitazation done manually.
 
 ![Image of Model2](assets/center_line_length_model.png)
+Figure 6. Model 2 workflow.
 ![Image of Map Study Site Banks](assets/map_banks.png)
+Figure 7. Map of study site stream centerlines and final mean centerline
 ![Image of Map Study Site Valley](assets/map_valley.png)
+Figure 8. Map of study site valley centerlines and final mean centerline
 
 
-The longitudinal and cross-sectional profiles of the reach were then extracted using the averaged banks and valley lines. Each profile consisted of a set of points spaced 1 m apart. This data was then exported and visualized in graphs in RStudio (v 1.4.1103 for MacOS) using [this code](https://github.com/sanjana-roy/RE-rosgen/blob/main/procedure/code/2-ProfileViewer.Rmd). Analysis using the R code allows us to determine the Slope of the stream as well as the Valley width (Table 1).
+The longitudinal and cross-sectional profiles of the reach were then extracted using the averaged streams and valley lines. Each profile consisted of a set of points spaced 1 m apart. This data was then exported and visualized in graphs in RStudio (v 1.4.1103 for MacOS) using [this code](https://github.com/sanjana-roy/RE-rosgen/blob/main/procedure/code/2-ProfileViewer.Rmd). Analysis using the R code allows us to determine the Slope of the stream as well as the Valley width (Table 1).
 
 ![Image of Cross-Section](assets/figures/CrossSecProf.png)
 ![Image of Long Prof](assets/figures/LongProf.png)
@@ -69,17 +80,15 @@ The longitudinal and cross-sectional profiles of the reach were then extracted u
 ![Image of Cross-Sec Zoom](assets/figures/ZoomBfDepth.png)
 
 
-# Differences in Method
+### Differences between our methods and Kasprak et al. (2016)
 1. The computational environments that were used in these two studies were different, possibly introducing many uncertainties in how the analysis was carried out. Kasprak et al. (2016) used RBT and the CHaMP Topo Toolbar with ESRI ArcGIS to process and analyze data, while this study used a combination of GRASS GIS and RStudio.
 2. Although we are not aware of whether Kasprak et al. (2016) used LiDAR in their analysis, the DEM files were of a resolution of 0.1m, allowing a finer digitization of stream and valley edges. DEM resolution in this study was 1m.
 3. Finally, Kasprak et al. (2016) were able to conduct field observations, which would have largely influenced the accuracy of their digitazation as well as general understanding of the landscape.
 
 
-# Unplanned Deviations from the Protocol
-1.
-> Use of no_clip
-> MacOS downloading XCode and something else
-> Difference in calculating slope in R
+### Unplanned Deviations from the Protocol
+1. The second model made use of a buffer around the CHaMP site, which clipped the digitized bank and valley lines to a similar length, aiding in standardizing the lengths and the calculation of the centerlines. However, the valley appeared to be beyond the radius of the buffer and therefore, another model was created (by Joe Holler) where clipping with a buffer was excluded from the workflow so as not to cut off digitized valley lines.
+2. We found that the R code calculates slope by taking the average of every point along the longitudinal profile, which would lead to inaccurate results with errors in the digitization of data, often resulting in outliers in the elevation. Therefore, the slope was calculating by taking points from the longitudinal profile, that seemed to correspond to a certain gradient, and dividing the change in rise over the change in run. The R code slope was 15.78 while the calculated slope was 0.086.
 
 
 ## Results
@@ -88,14 +97,14 @@ Table 1. Site Measurements
 
 | Variable | Value | Source |
 | :-: | :-: | :-: |
-| Bankfull Width | 6.1004 | CHaMP data BfWdth_Avg |
-| Bankfull Depth Maximum | 1.4275 | CHaMP data DpthBf_Max |
-| Bankfull Depth Mean | 0.3212 | CHaMP data DpthBf_Avg |
+| Bankfull Width | 6.1004 | CHaMP data: BfWdth_Avg |
+| Bankfull Depth Maximum | 1.4275 | CHaMP data: DpthBf_Max |
+| Bankfull Depth Mean | 0.3212 | CHaMP data: DpthBf_Avg |
 | Valley Width | 60(m) | Terrain Cross-Section |
 | Valley Depth | 2.855 | Bankfull Depth * 2|
 | Stream/River Length | 154.46(m) | Mean Stream Centerline from GRASS|
 | Valley Length | 167.83(m) | Mean Valley Centerline from GRASS|
-| Median Channel Material Particle Diameter | 152 | CHaMP data SubD50 |
+| Median Channel Material Particle Diameter | 152 | CHaMP data: SubD50 |
 
 Table 2. Rosgen Level I Classification
 
@@ -116,6 +125,19 @@ Table 3. Rosgen Level II Classification
 
 ## Discussion
 
+Kasprak et al. (2016) found the the CHaMP reach of the the Granite Boulder Creek to have a classification of B4, with moderate entrenchment and width/depth ratio. While my analysis was not able to be categorized by the Rosgen Key, according to the entrenchment width/depth ratios, it seems as though it would fall under a Level I Classification of C. The sinuosity variable (0.92) was too low for this stream type, which required a sinuosity of > 1.2. The slope range was between < 0.001 to 0.039, of which the slope I calculated (0.086) did not fall within.
+
+As both methods used the same CHaMP data, the only differences that could have occurred in the final variables were the entrenchment ratio, sinuosity, and slope, as these were dependent on the digitization of stream and valley lines. The width/depth ration and the channel material should result in the same classification outcomes, as these were derived directly from the CHaMP data. There was much uncertainty surrounding the manual digitization of stream and valley lines using the DEM layers. Although the valley definition was clearer at my site, identifying the edges of the stream was a challenge. Kasprak et al. (2016) had the advantage of visiting the site and possibly demarcating these areas more accurately. This uncertainty in our methods may have led to errors in our final results.
+
+Furthermore, our methods used LiDAR data that comes with its own uncertainties and challenges. LiDAR data collection itself may result in errors from sensing obstructions, such as bridges and trees. The data often also has a layer of grid lines that can make surfaces difficult to interpret. Therefore, the data itself could be a possible source of error in this analysis.
+
 
 
 ## Conclusion
+
+Although methods can be replicable, this study demonstrated that the translation of real-world physical characteristics into data carries with it many uncertainties that may be interpreted differently across groups conducting replicability studies. The main area of difference between the methods of this study and Kasprak et al. (2016) was the digitization of stream and valley banks. Replicating analyses would be more accurate through field-based work in order to better understand the physical context of a site. This is especially important for stream geomorphology and classification as rivers are dynamic in nature and change over time, and certain physical characteristics are difficult to discern from aerial imagery and analysis. Although the models we used were useful to standardize our methods across the class, and possibly for future replication by others, deviations in our methods demonstrated that models may not always account for certain situations, such as when valleys edges lie outside a buffer. There may always be uncertainties in replicability studies for stream classification, however, with increased testing of the accuracy of studies, we may be able to improve upon models and data interpretation to attain more accurate results. 
+
+
+## Acknowledgements
+
+Thank you to Joe Holler and Zach Hilgendorf for designing this study and providing materials. Thank you to Maddie Tango and Steven Montilla, with whom I worked closely.
