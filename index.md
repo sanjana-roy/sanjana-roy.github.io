@@ -13,6 +13,7 @@ Hi, my name is Sanjana and I'm an Architecture and Environmental Studies joint m
 ## GIScience Analyses
 
 - [Gravity Model of Spatial Interaction](gravity/gravity.md)
+- [Replication of Rosgen Stream Classification](Rosgen/rosgen.md)
 
 
 ## Course Blog Posts
