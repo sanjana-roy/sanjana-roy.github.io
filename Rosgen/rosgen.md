@@ -33,6 +33,7 @@ Figure 1. Level I and II of the Rosgen Classification System
 ### CHaMP Data
 Kasprak et al. (2016) uses the Columbia Habitat Monitoring Program (CHaMP) data, collected as a result of aquatic-habitat monitoring in the watershed of the Columbia River Basin. This data contains information on reaches, of which details were collected during 2012 and 2013, at wadable, perennial streams selected through random sampling. Each reach includes information on channel bankfull width and depth, gradient, substrate, and sinuosity. Each sampled reach is twenty times as long as the bankfull channel width at each site (120-360 m in length).
 
+### John Day Watershed Data
 We also utilised LiDAR data of the MFJD Watershed collected in 2008, as part of the Camp Creek LIDAR Project.
 
 ## Methods
@@ -49,7 +50,7 @@ As a class, we were randomly assigned 17 CHaMP points to classify through replic
 
 We used GRASS GIS (7.8.5 for MacOS) for the processing of the two layers of data, the CHaMP points and the MFJD Watershed tif file. [A model](https://github.com/sanjana-roy/RE-rosgen/blob/main/procedure/code/visualize.gxm) was used to create buffer zones around the CHaMP survey points, as Rosgen (1994) suggests analyzing a distance of 20 channel widths, applied in the distance settings. The model also uses the LiDAR MFJD image to create a Digital Elevation Model (DEM) with colors and hillshade.
 
-![Image of Model1](assets/visualize_model.png)
+![Image of Model1](assets/vizualize_model.png)
 ![Image of Map Study Site Elevation](assets/map_elevation.png)
 ![Image of Map Study Site Slope](assets/map_slope2.png)
 
@@ -115,6 +116,6 @@ Table 3. Rosgen Level II Classification
 
 ## Discussion
 
-## Conclusion
 
-## References
+
+## Conclusion
