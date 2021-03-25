@@ -25,7 +25,7 @@ This study attempts to use the Rosgen Stream Classification System (RCS), which 
 
 Therefore, this study attempts to create and practice a method of replicability of the Rosgen Classification System using high resolution terrain models to classify sections of streams and rivers, or “reaches.” We attempt to replicate the RCS analysis of Kasprak et al.’s (2016) study, which compared four different classification methods at the MFJD watershed scale.
 
-![Image of Rosgen Classification](Rosgen/assets/Rosgenclass.png)
+![Image of Rosgen Classification](assets/Rosgenclass.png)
 Figure 1. Level I and II of the Rosgen Classification System
 
 ## Data
@@ -45,27 +45,27 @@ The study used DEMs of grid resolutions 10m and 0.1m, aerial imagery, and ground
 ### Class Analysis
 As a class, we were randomly assigned 17 CHaMP points to classify through replication of the Kasprak et al.(2016) methods. I was assigned the Granite Boulder Creek stream (loc_id = 10) to analyse.
 
-![Image of watershed and points](Rosgen/assets/aoi.jpg)
+![Image of watershed and points](assets/aoi.jpg)
 
 We used GRASS GIS (7.8.5 for MacOS) for the processing of the two layers of data, the CHaMP points and the MFJD Watershed tif file. [A model](https://github.com/sanjana-roy/RE-rosgen/blob/main/procedure/code/visualize.gxm) was used to create buffer zones around the CHaMP survey points, as Rosgen (1994) suggests analyzing a distance of 20 channel widths, applied in the distance settings. The model also uses the LiDAR MFJD image to create a Digital Elevation Model (DEM) with colors and hillshade.
 
-![Image of Model1](Rosgen/Images/visualize_model.png)
-![Image of Map Study Site Elevation](Rosgen/assets/map_elevation.png)
-![Image of Map Study Site Slope](Rosgen/assets/map_slope2.png)
+![Image of Model1](assets/visualize_model.png)
+![Image of Map Study Site Elevation](assets/map_elevation.png)
+![Image of Map Study Site Slope](assets/map_slope2.png)
 
 The stream banks and valley edges were manually digitized with respect to the buffer at a scale of 1:1500. This digitization was done three times for both the banks and valley edges. [A second model](https://github.com/sanjana-roy/RE-rosgen/blob/main/procedure/code/center_line_length_no_clip.gxm) was then used to find the averages of each set of lines as well as the “average of the average,” providing us with a final banks line and valley line.
 
-![Image of Model2](Rosgen/Images/center_line_length_model.png)
-![Image of Map Study Site Banks](Rosgen/assets/map_banks.png)
-![Image of Map Study Site Valley](Rosgen/assets/map_valley.png)
+![Image of Model2](assets/center_line_length_model.png)
+![Image of Map Study Site Banks](assets/map_banks.png)
+![Image of Map Study Site Valley](assets/map_valley.png)
 
 
 The longitudinal and cross-sectional profiles of the reach were then extracted using the averaged banks and valley lines. Each profile consisted of a set of points spaced 1 m apart. This data was then exported and visualized in graphs in RStudio (v 1.4.1103 for MacOS) using [this code](https://github.com/sanjana-roy/RE-rosgen/blob/main/procedure/code/2-ProfileViewer.Rmd). Analysis using the R code allows us to determine the Slope of the stream as well as the Valley width (Table 1).
 
-![Image of Cross-Section](Rosgen/Images/figures/CrossSecProf.png)
-![Image of Long Prof](Rosgen/assets/figures/LongProf.png)
-![Image of LongProf Slope](Rosgen/assets/figures/SlopePer.png)
-![Image of Cross-Sec Zoom](Rosgen/assets/figures/ZoomBfDepth.png)
+![Image of Cross-Section](assets/figures/CrossSecProf.png)
+![Image of Long Prof](assets/figures/LongProf.png)
+![Image of LongProf Slope](assets/figures/SlopePer.png)
+![Image of Cross-Sec Zoom](assets/figures/ZoomBfDepth.png)
 
 
 # Differences in Method
