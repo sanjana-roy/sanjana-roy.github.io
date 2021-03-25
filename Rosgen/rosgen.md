@@ -14,7 +14,7 @@ and Replication by: Kasprak, A., N. Hough-Snee, T. Beechie, N. Bouwes, G. Brierl
 Replication Authors:
 Sanjana Roy, Zach Hilgendorf, Joseph Holler, and Peter Kedron.
 
-Replication Materials Available at: [github repository name](github repository link)
+Replication Materials Available at: [RE-Rosgen](https://github.com/sanjana-roy/RE-rosgen)
 
 Created: `24 March 2021`
 Revised: `25 March 2021`
@@ -25,47 +25,47 @@ This study attempts to use the Rosgen Stream Classification System (RCS), which 
 
 Therefore, this study attempts to create and practice a method of replicability of the Rosgen Classification System using high resolution terrain models to classify sections of streams and rivers, or “reaches.” We attempt to replicate the RCS analysis of Kasprak et al.’s (2016) study, which compared four different classification methods at the MFJD watershed scale.
 
-![Image of Rosgen Classification](Rosgen/Images/Rosgenclass.png)
+![Image of Rosgen Classification](Rosgen/assets/Rosgenclass.png)
 Figure 1. Level I and II of the Rosgen Classification System
 
 ## Data
 
-# CHaMP Data
+### CHaMP Data
 Kasprak et al. (2016) uses the Columbia Habitat Monitoring Program (CHaMP) data, collected as a result of aquatic-habitat monitoring in the watershed of the Columbia River Basin. This data contains information on reaches, of which details were collected during 2012 and 2013, at wadable, perennial streams selected through random sampling. Each reach includes information on channel bankfull width and depth, gradient, substrate, and sinuosity. Each sampled reach is twenty times as long as the bankfull channel width at each site (120-360 m in length).
 
 We also utilised LiDAR data of the MFJD Watershed collected in 2008, as part of the Camp Creek LIDAR Project.
 
 ## Methods
 
-# Kasprak et al. (2016) Analysis
+### Kasprak et al. (2016) Analysis
 Kasprak et al. (2016) classified 33 CHaMP reaches in the MFJD Basin using Levels I and II of the RCS.
 The study used DEMs of grid resolutions 10m and 0.1m, aerial imagery, and ground-based assessments to understand stream morphological characteristics in order to fulfil the Level I classification. Processing was done using the [River Bathymetry Toolkit (RBT)](https://essa.com/explore-essa/tools/river-bathymetry-toolkit-rbt/) and the [CHaMP Topo Toolbar](http://champtools.northarrowresearch.com/), both used with ESRI ArcGIS software. In order to further classify streams at Level II, Kasprak et al. (2016) then used river bed material size identified by the CHaMP survey from the stream reaches.
 
 
-# Class Analysis
+### Class Analysis
 As a class, we were randomly assigned 17 CHaMP points to classify through replication of the Kasprak et al.(2016) methods. I was assigned the Granite Boulder Creek stream (loc_id = 10) to analyse.
 
-![Image of watershed and points](Rosgen/Images/aoi.jpg)
+![Image of watershed and points](Rosgen/assets/aoi.jpg)
 
 We used GRASS GIS (7.8.5 for MacOS) for the processing of the two layers of data, the CHaMP points and the MFJD Watershed tif file. [A model](https://github.com/sanjana-roy/RE-rosgen/blob/main/procedure/code/visualize.gxm) was used to create buffer zones around the CHaMP survey points, as Rosgen (1994) suggests analyzing a distance of 20 channel widths, applied in the distance settings. The model also uses the LiDAR MFJD image to create a Digital Elevation Model (DEM) with colors and hillshade.
 
 ![Image of Model1](Rosgen/Images/visualize_model.png)
-![Image of Map Study Site Elevation](Rosgen/Images/map_elevation.png)
-![Image of Map Study Site Slope](Rosgen/Images/map_slope2.png)
+![Image of Map Study Site Elevation](Rosgen/assets/map_elevation.png)
+![Image of Map Study Site Slope](Rosgen/assets/map_slope2.png)
 
 The stream banks and valley edges were manually digitized with respect to the buffer at a scale of 1:1500. This digitization was done three times for both the banks and valley edges. [A second model](https://github.com/sanjana-roy/RE-rosgen/blob/main/procedure/code/center_line_length_no_clip.gxm) was then used to find the averages of each set of lines as well as the “average of the average,” providing us with a final banks line and valley line.
 
 ![Image of Model2](Rosgen/Images/center_line_length_model.png)
-![Image of Map Study Site Banks](Rosgen/Images/map_banks.png)
-![Image of Map Study Site Valley](Rosgen/Images/map_valley.png)
+![Image of Map Study Site Banks](Rosgen/assets/map_banks.png)
+![Image of Map Study Site Valley](Rosgen/assets/map_valley.png)
 
 
 The longitudinal and cross-sectional profiles of the reach were then extracted using the averaged banks and valley lines. Each profile consisted of a set of points spaced 1 m apart. This data was then exported and visualized in graphs in RStudio (v 1.4.1103 for MacOS) using [this code](https://github.com/sanjana-roy/RE-rosgen/blob/main/procedure/code/2-ProfileViewer.Rmd). Analysis using the R code allows us to determine the Slope of the stream as well as the Valley width (Table 1).
 
 ![Image of Cross-Section](Rosgen/Images/figures/CrossSecProf.png)
-![Image of Long Prof](Rosgen/Images/figures/LongProf.png)
-![Image of LongProf Slope](Rosgen/Images/figures/SlopePer.png)
-![Image of Cross-Sec Zoom](Rosgen/Images/figures/ZoomBfDepth.png)
+![Image of Long Prof](Rosgen/assets/figures/LongProf.png)
+![Image of LongProf Slope](Rosgen/assets/figures/SlopePer.png)
+![Image of Cross-Sec Zoom](Rosgen/assets/figures/ZoomBfDepth.png)
 
 
 # Differences in Method
@@ -84,6 +84,7 @@ The longitudinal and cross-sectional profiles of the reach were then extracted u
 ## Results
 
 Table 1. Site Measurements
+
 | Variable | Value | Source |
 | :-: | :-: | :-: |
 | Bankfull Width | 6.1004 | CHaMP data BfWdth_Avg |
@@ -96,6 +97,7 @@ Table 1. Site Measurements
 | Median Channel Material Particle Diameter | 152 | CHaMP data SubD50 |
 
 Table 2. Rosgen Level I Classification
+
 | Criteria | Value | Formula |
 | :-: | :-: |
 | Entrenchment Ratio | 9.835 | (Valley Width at Bankfull Depth * 2) / Bankfull Width |
@@ -104,6 +106,7 @@ Table 2. Rosgen Level I Classification
 | Level I Stream Type | Either E or C |
 
 Table 3. Rosgen Level II Classification
+
 | Criteria | Value |
 | :-: | :-: |
 | Slope | 0.086 |
