@@ -1,7 +1,6 @@
 ---
-title: page
-layout: Riparian Trees and Flood Zones in Dar es Salaam
-
+layout: page
+title: Riparian Trees and Flood Zones in Dar es Salaam
 ---
 
 This was a collaborative project between [Sanjana Roy](https://sanjana-roy.github.io) and [Jackson Mumper](https://jackson-mumper.github.io).
