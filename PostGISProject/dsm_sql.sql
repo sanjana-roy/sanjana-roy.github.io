@@ -15,7 +15,8 @@ Load it into QGIS first, and then into PostGIS, giving it the table name: census
 Remember to use only lower case table names and field names! */
 
 /* NOW, we're ready to start using SQL queries to investigate the data!
-Our ultimate goal will be to find the population density of wards and the percentage of area flooded in each ward, but we'll have some diversions along the way to learn more about spatial SQL.
+Our ultimate goal will be to find the population density of wards and the percentage of area flooded in each ward,
+but we'll have some diversions along the way to learn more about spatial SQL.
 
 I suggest opening this file in Notepad++ or Atom to see the text styled according to the SQL language.
 Each SQL query ends in a semicolon; and you can copy these to DB Manager and execute (F5 key) one at a time to see the results.
@@ -170,9 +171,11 @@ FROM
 	FROM wards LEFT JOIN census
 	ON wards.ward_name = census.ward_name AND wards.district_n = census.dis_name) AS a
 WHERE totalpop IS NULL;
--- we placed our first query in parenthesis and gave it a table name alias of 'a' with AS a, and used the results of that query in place of an ordinary table. If you create compound queries like this, it's required to use a unique alias for each subquery
+-- we placed our first query in parenthesis and gave it a table name alias of 'a' with AS a, and used the results of that query in place of an ordinary table.
+-- If you create compound queries like this, it's required to use a unique alias for each subquery
 
-/* It's always best practitce to check the counts, check for duplicates, and check for NULL values when you join data, becuase any number of suprising errors can happen. In this case, it seems like the census geographies may have changed, because the data table we are using matches the 2012 Tanzanian Census report. */
+/* It's always best practitce to check the counts, check for duplicates, and check for NULL values when you join data, becuase any number of suprising errors can happen.
+In this case, it seems like the census geographies may have changed, because the data table we are using matches the 2012 Tanzanian Census report. */
 
 /* We have two options for making this permanent*/
 
@@ -219,7 +222,7 @@ ALTER TABLE ward_census
 DROP COLUMN geom;
 
 /* try adding a column of type REAL to ward_census and calculating the area in square kilometers! */
-SELECT *, st_area(geom)/1000000 as REAL
+SELECT *, st_area(geom):: real /1000000 as area_km2
 FROM ward_census;
 
 /* on the INFO tab for your spatial Layers, you might see a caution symbol with "no spatial index defined". If that is the case, use the link to "create it" for each spaital table */
@@ -262,7 +265,7 @@ We structure the query like a select by location with the join on st_intersects(
 
 SELECT ward_census.*, st_multi(st_intersection(ward_census.utmgeom, flooddissolve.geom))::geometry(multipolygon,32737) as geom
 FROM ward_census INNER JOIN flooddissolve
-ON st_intersects(ward_census.utmgeom, flooddissolve.geom)::geometry(multipolygon,32737);
+ON st_intersects(ward_census.utmgeom, flooddissolve.geom);
 
 /*
 The ST_MULTI() function was added to cast each geometry as multi-geometry type.
@@ -277,14 +280,32 @@ Try this on your own, and then drop the old utmgeom column from that new table.
 */
 
 /* can you calculate an area for the flooded parts of each ward ? */
-SELECT st_area(geom) as flood_area_m2
-FROM ward_flood;
+
+ALTER TABLE ward_flood
+ADD COLUMN flood_area_m2 real;
+
+UPDATE ward_flood
+SET flood_area_m2 = st_area(geom);
 
 /* can you join that area back to the original wards ? */
+ALTER TABLE ward_census
+ADD COLUMN flood_area_m2 real;
 
-
+UPDATE ward_census
+SET flood_area_m2 = ward_flood.flood_area_m2
+FROM ward_flood
+WHERE ward_census.ward_name = ward_flood.ward_name;
 
 /* can you calculate the percentage of area flooded and the population density now ? */
+
+ALTER TABLE ward_census
+ADD COLUMN pct_flood real,
+ADD COLUMN pop_density real;
+
+UPDATE ward_census
+SET pct_flood = (flood_area_m2 / st_area(utmgeom)) * 100, pop_density = totalpop/ (st_area(utmgeom)/1000000);
+
+
 
 /* HINT: you can add a WHERE clause to an UPDATE query in order to only update a few rows, e.g. if you wanted to enter a percentage of 0 for subwards with no flooding, it might look like this: */
 UPDATE ward_census
