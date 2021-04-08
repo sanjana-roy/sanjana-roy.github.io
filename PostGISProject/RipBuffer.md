@@ -22,13 +22,13 @@ The above data was gathered through PostGIS in QGIS and database queries using S
 
 The full script used in this analysis can be downloaded [here](RiparianTrees.sql).
 
-![Static map](assets/static_map.png)
-
 ## Results
+
+![Static map](assets/static_map.png)
 
 A full, interactive map of riparian trees, riparian buffers, flood zones, and ward boundaries in our study region can be found [here](assets/index.html).
 
-The scatterplot in Figure 3 illustrates the correlation between riparian trees and incidence of flooding by ward in Dar es Salaam.
+**Correlation between riparian trees and incidence of flooding by ward in Dar es Salaam**
 
 ![scatterplot](assets/graph.png)
 
