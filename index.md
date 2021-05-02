@@ -15,6 +15,7 @@ Hi, my name is Sanjana and I'm an Architecture and Environmental Studies joint m
 - [Gravity Model of Spatial Interaction](gravity/gravity.md)
 - [Replication of Rosgen Stream Classification](Rosgen/rosgen.md)
 - [Riparian Trees and Flood Zones in Dar es Salaam](PostGISProject/RipBuffer.md)
+- [Replication of Vulnerability Modeling for Sub-Saharan Africa](Malcomb/Malcomb.md)
 
 
 ## Course Blog Posts
