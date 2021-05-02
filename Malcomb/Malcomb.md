@@ -4,8 +4,7 @@ title: RP- Vulnerability modeling for sub-Saharan Africa
 ---
 
 
-**Replication of**
-# Vulnerability modeling for sub-Saharan Africa
+**Replication of Vulnerability modeling for sub-Saharan Africa**
 
 Original study *by* Malcomb, D. W., E. A. Weaver, and A. R. Krakowka. 2014. Vulnerability modeling for sub-Saharan Africa: An operationalized approach in Malawi. *Applied Geography* 48:17–30. DOI:[10.1016/j.apgeog.2014.01.004](https://doi.org/10.1016/j.apgeog.2014.01.004)
 
@@ -32,7 +31,7 @@ The original study was published without data or code, but has detailed narrativ
 
 The study by Malcomb et al. (2014) attempts to create a multi-criteria analysis model of vulnerability in Malawi. The authors use three sources of data that investigate four different criteria or "metathemes": adaptive capacity, including access and assets, livelihood sensitivity, and physical exposure. These metathemes were decided upon after a series of interviews that the authors conducted to understand "household social and economic practices in the context of environmental uncertainty." These interviews also informed the weighting of the eighteen evidence-based indicators in order to statistically represent vulnerability, which is a common approach used in many vulnerability studies (Malcomb et al., 2014). This weighting is demonstrated in the table below:
 
-[Table2](assets/results/figures/MalcombTable2)
+![Table2](assets/results/figures/MalcombTable2)
 **Figure 1.** Malcomb et al. (2014) Table 2 showing weighted indicators by metatheme
 
 **ADAPTIVE CAPACITY**
@@ -104,13 +103,13 @@ The replication study will use R.
 
 ### Mapping Adaptive Capacity
 
-[Figure4](assets/results/maps/ac_2010.png)
+![Figure4](assets/results/maps/ac_2010.png)
 **Figure 2.** Digitized map of Figure 4 in Malcomb et al. (2014). Digitization was conducted using the Georeferencer in QGIS
 
-[DiffFigure4](assets/results/maps/diffmap2010.png)
+![DiffFigure4](assets/results/maps/diffmap2010.png)
 **Figure 3.** Difference in results of adaptive capacity from the Malcomb et al. (2014) original study and this replication study
 
-[CompTable](assets/results/figures/CompTable.png)
+![CompTable](assets/results/figures/CompTable.png)
 **Table 1.** Matrix of comparison between Malcomb et al. (2014) original study and this replication study based on the Jenk's classification used in the original study
 
 With a Spearman's Rho coefficient of 0.764, the Malcomb et. al (2014) adaptive capacity scores in Malawi were mostly supported by and aligned with the replication. This coefficient, which indicates how well two sets of ranked data correlate with each other, is 0 at no correlation, 1 at a positive correlation, and -1 at an inverse correlation. Therefore, our replication study demonstrates a relatively strong positive correlation with the original study. However, according to the difference map (Figure 3), the replication does appear to have a greater number of higher scores than the original. There seems to be only a few cases in which the original study adaptive capacity scores were greater. Having used the same data, it is possible that certain indicators were calculated differently than what was done in the original study. There may also be issues with the rescaling of variables through our multiplication by 20 in order to match the Malcomb et al. (2014) range, which may have pushed certain indicators higher than the original study.
@@ -118,13 +117,13 @@ With a Spearman's Rho coefficient of 0.764, the Malcomb et. al (2014) adaptive c
 
 ### Mapping Vulnerability
 
-[Figure5](assets/esults/maps/vulnerability.png)
+![Figure5](assets/esults/maps/vulnerability.png)
 **Figure 4.** Digitized map of Figure 5 in Malcomb et al. (2014). Digitization was conducted using the Georeferencer in QGIS
 
-[DiffFigure5](assets/results/maps/diffmapvuln.png)
+![DiffFigure5](assets/results/maps/diffmapvuln.png)
 **Figure 5.** Difference in results of vulnerability from the Malcomb et al. (2014) original study and this replication study
 
-[Scatterplot](assets/results/figures/scatterplot.png)
+![Scatterplot](assets/results/figures/scatterplot.png)
 **Figure 6.** Scatterplot demonstrating correlation between raster values of the original and replicated study
 
 A Spearman's Rho result of 0.273 as well as the scatterplot in Figure 6 both demonstrate a weak correlation between the vulnerability mapping of the original and replicated studies. There was much uncertainty in calculating livelihood sensitivity indicators, which could be a major source of error in this replication.
