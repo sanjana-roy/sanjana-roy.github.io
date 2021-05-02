@@ -31,7 +31,7 @@ The original study was published without data or code, but has detailed narrativ
 
 The study by Malcomb et al. (2014) attempts to create a multi-criteria analysis model of vulnerability in Malawi. The authors use three sources of data that investigate four different criteria or "metathemes": adaptive capacity, including access and assets, livelihood sensitivity, and physical exposure. These metathemes were decided upon after a series of interviews that the authors conducted to understand "household social and economic practices in the context of environmental uncertainty." These interviews also informed the weighting of the eighteen evidence-based indicators in order to statistically represent vulnerability, which is a common approach used in many vulnerability studies (Malcomb et al., 2014). This weighting is demonstrated in the table below:
 
-![Table2](assets/results/figures/MalcombTable2)
+![Table2](assets/results/figures/MalcombTable2.png)
 **Figure 1.** Malcomb et al. (2014) Table 2 showing weighted indicators by metatheme
 
 **ADAPTIVE CAPACITY**
@@ -117,7 +117,7 @@ With a Spearman's Rho coefficient of 0.764, the Malcomb et. al (2014) adaptive c
 
 ### Mapping Vulnerability
 
-![Figure5](assets/esults/maps/vulnerability.png)
+![Figure5](assets/results/maps/vulnerability.png)
 **Figure 4.** Digitized map of Figure 5 in Malcomb et al. (2014). Digitization was conducted using the Georeferencer in QGIS
 
 ![DiffFigure5](assets/results/maps/diffmapvuln.png)
