@@ -24,3 +24,4 @@ Hi, my name is Sanjana and I'm an Architecture and Environmental Studies joint m
 - [GIS as Reproducible Science](musings/GIScience-reproducibility.md)
 - [Error and Uncertainty](musings/ErrorUncertainty.md)
 - [Spatial Twitter Analysis](musings/SpatialTwitterAnalysis.md)
+- [Humanitarian GIS](musings/HumanitarianGIS.md)
