@@ -8,6 +8,9 @@ title: Gravity Model of Spatial Interaction
 3. [Target Features Preprocessing Model](assets/TargetFeaturesPreprocessing2.model3)
 4. [Homeland Security Processing Model](assets/HomelandSecurityPreprocessing.model3)
 
+## Web Map
+
+![map](assets/mapimage.png)
 
 
 ### [The Gravity Model](assets/GravityModel.model3)
