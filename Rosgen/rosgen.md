@@ -55,8 +55,10 @@ We used GRASS GIS (7.8.5 for MacOS) for the processing of the two layers of data
 
 ![Image of Model1](assets/vizualize_model.png)
 *Figure 3. Model 1 workflow*
+
 ![Image of Map Study Site Elevation](assets/map_elevation.png)
 *Figure 4. Map of Study Site Elevation*
+
 ![Image of Map Study Site Slope](assets/map_slope2.png)
 *Figure 5. Map of Study Site Slope*
 
@@ -64,8 +66,10 @@ The stream banks and valley edges were manually digitized with respect to the le
 
 ![Image of Model2](assets/center_line_length_model.png)
 *Figure 6. Model 2 workflow.*
+
 ![Image of Map Study Site Banks](assets/map_banks.png)
 *Figure 7. Map of study site stream centerlines and final mean centerline*
+
 ![Image of Map Study Site Valley](assets/map_valley.png)
 *Figure 8. Map of study site valley centerlines and final mean centerline*
 
@@ -74,10 +78,13 @@ The longitudinal and cross-sectional profiles of the reach were then extracted u
 
 ![Image of Cross-Section](assets/figures/CrossSecProf.png)
 *Figure 9. Cross-Sectional Profile of Valley Near CHAMP Point*
+
 ![Image of Long Prof](assets/figures/LongProf.png)
 *Figure 10. Longitudinal Profile of Extracted Reach*
+
 ![Image of LongProf Slope](assets/figures/SlopePer.png)
 *Figure 11. Slope of the Longitudinal Profile of Extracted Reach*
+
 ![Image of Cross-Sec Zoom](assets/figures/ZoomBfDepth.png)
 *Figure 12. Determining the Flood-Prone Width Using the Cross-Sectional Profile and the Maximum Bankfull depth x 2*Elevation*
 
@@ -109,6 +116,7 @@ The longitudinal and cross-sectional profiles of the reach were then extracted u
 | Median Channel Material Particle Diameter | 152 | CHaMP data: SubD50 |
 
 
+
 **Table 2. Rosgen Level I Classification**
 
 | Criteria | Value | Formula |
@@ -117,6 +125,7 @@ The longitudinal and cross-sectional profiles of the reach were then extracted u
 | Width / Depth Ratio | 18.99 | Bankfull Width / Bankfull Depth Mean|
 | Sinuosity | 0.920 | Stream Length / Valley Length |
 | Level I Stream Type | Either E or C |
+
 
 
 **Table 3. Rosgen Level II Classification**
