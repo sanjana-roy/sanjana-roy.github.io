@@ -12,12 +12,19 @@ Hi, my name is Sanjana and I'm an Architecture and Environmental Studies joint m
 
 ## GIScience Analyses
 
-- [Gravity Model of Spatial Interaction](gravity/gravity.md)
-- [Replication of Rosgen Stream Classification](Rosgen/rosgen.md)
-- [Riparian Trees and Flood Zones in Dar es Salaam](PostGISProject/RipBuffer.md)
-- [Replication of Vulnerability Modeling for Sub-Saharan Africa](Malcomb/Malcomb.md)
-- [Spatial-Temporal and Content Analysis of Twitter Data](Dorian/Dorian.md)
-- [Replication of Spatial Accessibility of COVID-19 Health Resources](Kang/Kang.md)
+### [Gravity Model of Spatial Interaction](gravity/gravity.md)
+
+[![GravityModel](gravity/assets/mapimage.png)](gravity/gravity.md)
+
+### [Replication of Rosgen Stream Classification](Rosgen/rosgen.md)
+
+### [Riparian Trees and Flood Zones in Dar es Salaam](PostGISProject/RipBuffer.md)
+
+### [Replication of Vulnerability Modeling for Sub-Saharan Africa](Malcomb/Malcomb.md)
+
+### [Spatial-Temporal and Content Analysis of Twitter Data](Dorian/Dorian.md)
+
+### [Replication of Spatial Accessibility of COVID-19 Health Resources](Kang/Kang.md)
 
 
 ## Course Blog Posts
