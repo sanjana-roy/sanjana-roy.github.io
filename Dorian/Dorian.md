@@ -81,7 +81,7 @@ Figure 4.
 ![Hot Spot Analysis](results/figures/Tornado_tweetclusters.png)
 Figure 5.
 
-![NDTI Map]()
+![NDTI Map](results/figures/Tornado_ndti.png)
 Figure 6.
 
 - Add county boundaries to maps
