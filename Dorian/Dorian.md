@@ -4,8 +4,7 @@ title: RE- Spatial-temporal and content analysis of Twitter Data
 ---
 
 
-**Replication of**
-# Spatial, temporal and content analysis of Twitter data
+**Replication of Spatial, temporal, and content analysis of Twitter data**
 
 Original study *by* Wang, Z., X. Ye, and M. H. Tsou. 2016. Spatial, temporal, and content analysis of Twitter for wildfire hazards. *Natural Hazards* 83 (1):523–540. DOI:[10.1007/s11069-016-2329-6](https://doi.org/10.1007/s11069-016-2329-6).
 and
@@ -16,7 +15,7 @@ Replication Author: Sanjana Roy
 Replication Materials Available at: [RE-Dorian](RE-Dorian)
 
 Created: `22 May 2021`
-Revised: `23 May 2021`
+Revised: `24 May 2021`
 
 ## Abstract
 
@@ -29,9 +28,7 @@ In his replication study, I will analyse the spatial distribution of tweets duri
 
 ## Original Study Information
 
-**summarize Wang et al (2016) similar to the Holler (2021) summary below**
-
-Holler (2021) loosely replicated the methods of Wang et al (2016) for the case of Hurricane Dorian's landfall on the U.S. mainland during the 2019 Atlantic Hurricane season. Wang et al.'s (2016) data was based on Twitter Search API queries for 'fire' and 'wildfire' and then further focused on the specific wildfires in 'Bernado' and 'San Marcos' during the time period of May 13, 2014 to May 22, 2014. The geographical extent of this twitter data was set at a radius of 40 miles from San Diego County. The authors conducted an analysis identifying important terms and term clusters, using k-means method of clustering, and found that the majority of tweets focused on the need to evacuate or the current state of fires and extent of damage caused in homes. A social network analysis was also conducted based on retweet relationships identified in the data, finding that local news media have a large impact on the social media network and the distribution of information. Lastly, the authors also used dual kernel density estimation (dual KDE) to map the spatial patterns of tweets associated with the two specific wildfires in Bernado and San Marcos and found that tweet locations largely corresponded with the locations of wildfires.
+Holler (2021) loosely replicated the methods of Wang et al (2016) for the case of Hurricane Dorian's landfall on the U.S. mainland during the 2019 Atlantic Hurricane season. Wang et al.'s (2016) data was based on Twitter Search API queries for 'fire' and 'wildfire' and then further focused on the specific wildfires in 'Bernado' and 'San Marcos' during the time period of May 13, 2014 to May 22, 2014. The geographical extent of this twitter data was set at a radius of 40 miles from San Diego County. The authors conducted an analysis identifying important terms and term clusters, using k-means method of clustering, and found that the majority of tweets focused on the need to evacuate or the current state of fires and extent of damage caused in homes. A social network analysis was also conducted based on retweet relationships identified in the data, finding that local news media have a large impact on the social media network and the distribution of information. Lastly, the authors also used dual kernel density estimation (Dual KDE), in conjuntion with census population data at the block level, to map the spatial patterns of tweets associated with the two specific wildfires in Bernado and San Marcos and found that tweet locations largely corresponded with the locations of wildfires.
 
 Holler modified Wang et al's methods by not searching for retweets for network analysis, focusing instead on original Tweet content with keywords hurricane, Dorian, or sharpiegate (a trending hashtag referring to the storm). Holler modified the methodology for normalizing tweet data by creating a normalized Tweet difference index and extended the methodology to test for spatial clustering with the local Getis-Ord statistic. The study tested a hypothesis that false narratives of hurricane risk promulgated at the highest levels of the United States government would significantly distort the geographic distribution of Twitter activity related to the hurricane and its impacts, finding that original Twitter data still clustered only in the affected areas of the Atlantic coast in spite of false narratives about risk of a westward track through Alabama.
 
@@ -55,34 +52,33 @@ Below is a workflow of the methodology used for this analysis. The code behind t
 2. A temporal analysis of tornado tweets by hour for the time period of seven days was conducted using the package 'rtweet'
 3. A textual analysis of the tornado tweets was conducted by filtering the tweet content for stop words (using the existing R stop_words documentation) and graphing the frequency of the top 15 words present in all the tweet content
 4. A second textual analysis was conducted by identifying word pairs in the tornado tweet content and presenting this in a word cloud using the 'ggraph' package
-5. Spatial analysis involved acquiring census population data and geometry of selected states and plotting a choropleth map showing population density by county layered with tweet point data using the 'ggplot2' package
+5. Spatial analysis involved acquiring census population data and geometry ([U.S. Census](https://api.census.gov/data/key_signup.html)) of selected states and plotting a choropleth map showing population density by county layered with tweet point data using the 'ggplot2' package
 6. Tweets were grouped by county and summarised for the number of tweets. Tweet rates per 10,000 in population were calculated as well as the "Normalized Tweet Difference," using the formula (tornado - base)/(tornado + base)
-7. Tornado tweets and baseline tweets were transformed into point data and the CRS NAD 1983 (4269) and were joined to county data by GEOID
+7. Tornado tweets and baseline tweets were transformed into point data and the CRS NAD 1983 (4269) and were joined to county data by GEOID (This code was developed by [Casey Lilley (2019)](https://caseylilley.github.io/finalproj.html)] and edited by Holler (2021))
 8. Data was then grouped by county and identified for which counties were within 110 kilometers of one another. A weight matrix was then created from these nearest neighbour objects
 9. The Getis-Ord G* statistic was used to identify hot and cold spots of twitter data
 10. G* scores were classified by their significance values at the p<0.125 and p<0.05 two-tailed confidence levels. These hot and cold spots were then mapped
 
-CITE CITATIONS IN CODE
-
 ## Replication Results
 
 ![Temporal Analysis](results/figures/Tornado_tweetsbyhour.png)
-Figure 1.
+
+*Figure 1.*
 
 ![Word Analysis](results/figures/Tornado_uniquewords.png)
-Figure 2.
+*Figure 2.*
 
 ![Word network](results/figures/Tornado_wordnetwork.png)
-Figure 3.
+*Figure 3.*
 
 ![Twitter Activity](results/figures/Tornado_tweetlocations2.png)
-Figure 4.
+*Figure 4.*
 
 ![Hot Spot Analysis](results/figures/Tornado_tweetclusters.png)
-Figure 5.
+*Figure 5. Breaks and colors from http://michaelminn.net/tutorials/r-point-analysis/ and based on 1.96 as the confidence level interval for z-scores*
 
-![NDTI Map](results/figures/Tornado_ndti.png)
-Figure 6.
+![NTDI Map](results/figures/Tornado_ndti.png)
+*Figure 6.*
 
 - Add county boundaries to maps
 
@@ -92,7 +88,7 @@ Summarize changes and uncertainties between
 - your expectation of a reproduction workflow based on the reading and Dorian analysis
 - your final workflow after completing the lab
 
-The analysis did not include any significant changes from the code and methodology produced by Holler (2021). Minor changes were made in the number of baseline tweets that were pulled from Twitter, which were based on the number of tornado tweets obtained. The word pairs network also used a lower count of 12 instead of 30 to graph the word cloud, according to the smaller set of data obtained. Certain map parameters were adjusted for better visualization and clearer labelling of graphs, and a map showing the "Normalized Tweet Difference" was also created. Bot data was analysed using the following code:
+The analysis did not include any significant changes from the code and methodology produced by Holler (2021). Minor changes were made in the number of baseline tweets that were pulled from Twitter, which were based on the number of tornado tweets obtained. The word pairs network also used a lower count of 12 instead of 30 to graph the word cloud, according to the smaller set of data obtained. Certain map parameters were adjusted for better visualization and clearer labelling of graphs, and a map showing the "Normalized Tweet Difference" was also created. Bot data was analysed using the following code and included in Figure 4 to visualise twitter activity:
 
 ```r
 tornado <- tornado %>%
@@ -109,35 +105,19 @@ Provide a summary and interpretation of your key findings in relation to your re
 ![NOAA Reports](results/figures/noaa_Reports.png)
 Figure 7. Thanks to Emma Clinton for the source I saw on her blog
 
-Similar to the findings of Wang et al. (2016), the observed twitter activity surrouding tornados largely corresponded with the eastward movement of tornado activity from the period of April 29th to May 5th. Figure 1 shows peaks of tornado-related twitter activity on April 29th and from May 3rd to May 5th. The data that was obtained was concentrated in Mississippi with tweets from surrounding states included in the 300 miles stemming from Jackson, MI. The 29th of May showed tornado activity present in Texas and not Mississippi, and therefore, peaks in tornado-related tweets would have been from areas of Texas that fell within the mile radius, such as Dallas, TX. However, during the period of May 3rd to May 5th, tornado activity peaked for many of the Southern belt of states, including Mississippi, (Figure 7) explaining the trends in Figure 1 during this time period.
+Similar to the findings of Wang et al. (2016), the observed twitter activity surrouding tornados largely corresponded with the eastward movement of tornado activity from the period of April 29th to May 5th. Figure 1 shows peaks of tornado-related twitter activity on April 29th and from May 3rd to May 5th. The data that was obtained was concentrated in Mississippi with tweets from surrounding states included in the 300 miles stemming from Jackson, MI. The 29th of May showed tornado activity present in Texas and not Mississippi, and therefore, peaks in tornado-related tweets would have been from areas of Texas that fell within the mile radius, such as Dallas, TX. However, during the period of May 3rd to May 5th, tornado activity peaked for many of the Southern belt of states, including Mississippi, (Figure 7) explaining the trends in Figure 1 during this time period. Figure 6 also shows a clear focus on tornado-related witter activity, compared to baseline twitter activity, around the Mississippi area and parts of Texas from a normal level. This indicates people were utilizing twitter more than usual to reach out to others and spread word on the tornado occurrence.
 
-The analysis of unique words found that the most number of words used by tweets in the area involved the use of 'ms', indicating the state, as well as 'warning', 'cdt' (Central Daylight Time), and 'pm'. All of these words indicate the use of warning messages and alerts that were spread to inform people on the weather status and where and when tornados would be affecting the area. A majority of the tweets that were issued during this time period were bot-created tweets by weather channels or national weather services (Figure ...). Similar to the findings of Wang et al. (2016), these media-like accounts tend to dominate the twitter network during a disaster and are highly influential in the spread of information, at times preventing smaller occurrences and personal experiences to come to the fore. Although this reproduction did not involve the use of retweets, the data still indicates the influential role they played and the extent to which they dominate overall tweet content. However, this large presence in the data may also speak to the inability of people to access online platforms simply due to the nature of a disaster occurring or due to the fact that there may be power outages and infrastructural damage. These factors introduce uncertainty in the transformation of real-world phenomenon into data that can be analysed.
+The analysis of unique words found that the most number of words used by tweets in the area involved the use of 'ms', indicating the state, as well as 'warning', 'cdt' (Central Daylight Time), and 'pm'. All of these words indicate the use of warning messages and alerts that were spread to inform people on the weather status and where and when tornados would be affecting the area. A majority of the tweets that were issued during this time period were bot-created tweets by weather channels or the National Weather Service (Figure 4). Similar to the findings of Wang et al. (2016), these local news media accounts tend to dominate the twitter network during a disaster and are highly influential in the spread of information, at times preventing smaller occurrences and personal experiences to come to the fore. Although this reproduction did not involve the use of retweets, the data still indicates the influential role they played and the extent to which they dominate overall tweet content. However, this large presence in the data may also speak to the inability of people to access online platforms simply due to the nature of a disaster occurring or due to the fact that there may be power outages and infrastructural damage. These factors introduce uncertainty in the transformation of real-world phenomenon into data that can be analysed.
 
-Figure 3 demonstrates similar findings to Figure 2, indicating the times at which the tornados were to occur, which were mostly likely spread by weather channels. These seem to mostly be occuring during the night, as identified during the disaster as well, when people would be asleep and not active online leading to a delayed response in twitter activity following the disaster. The word pairings also reveal some of the counties and cities in Mississippi that were largely affected by the tornados: Calhoun (Vardaman - 43 homes affected), Yazoo (76 homes affected), and Lee counties (Tupelo and Saltillo - 76 homes affected). The graph also involves the towns of Fort Worth and Blum in Texas, which would have been included in the mile radius from Jackson, MI.
-
-
-According to [weather data](wikipedia)  
-
-Figure 5 shows a clustering of activity around the
-
-
-
-
-
-- *Twitter Activity corresponds with the tornados that hit at different times across the South and Mississippi*
-- *Eastward movement of tornado activity*
-- *Cities most affected and comparison in word map*
-- Kernel density would maybe be better? Wang et al.
-- Could not separate differentiated clusters within Mississippi - comparison with other people who looked at tornado data
-- *Analysis of bots - separating colors in point map of twitter locations*
-- *Power outages to consider -- adding to uncertainty*
-- Tornados are less predictable
-- much of the data is not associated with geocoordinates
+Figure 3 demonstrates similar findings to Figure 2, indicating the times at which the tornados were to occur, which was mostly likely information that was distributed by weather channels. The word pairings also reveal some of the counties and cities in Mississippi that were largely affected by the tornados: Calhoun (Vardaman - 43 homes affected), Yazoo (76 homes affected), and Lee counties (Tupelo and Saltillo - 76 homes affected) (As recorded by [WJTV](https://www.wjtv.com/news/local-news/18-tornadoes-confirmed-in-mississippi-for-may-2-may-4-severe-weather-events/#:~:text=Gaming%20%26%20Pop%20Culture-,18%20tornadoes%20confirmed%20in%20Mississippi%20for%20May,May%204%20severe%20weather%20events&text=At%20this%20time%2C%20no%20fatalities,homes%20affected%3B%206%20businesses%20affected)). The graph also involves the towns of Fort Worth and Blum in Texas, which would have been included in the mile radius from Jackson, MI. Figure 5 demonstrates these hotspots of activity, however, clusters within and surrounding Mississippi have not been differentiated. Perhaps adjusting the significance thresholds would result in more clearer differentiation of hotspots within this cluster. Wang et al. (2016) utilized Dual KDE to map the spatial patterns of these tweets along a gradient of low to high ignition locations of wildfires. Exploring how this can be achieved in r and with r packages may result in a better visualization and interpretation of the data.
 
 ## Conclusion
 
 Restate the key findings and discuss their broader societal implications or contributions to theory.
 Do the research findings suggest a need for any future research?
+
+Findings from this reproduction are consistent with Wang et al. (2016) and Holler (2021) in that they demonstrate how twitter activity tends to largely correspond with and track real-world disaster phenomenon. However, error and uncertainty present themselves at many scales. Much of the twitter data itself is not associated with geo-coordinates and would have to be extracted from the tweet content, similar to what Wang et al. (2016) did to identify specific wildfires in certain cities. Further looking into the influence of bots, local media, and weather channels would help to parse out information gleaned from twitter content and identify the specific roles these services play during a disaster, more specifically a weather-related disaster. Ultimately, Twitter data is useful to analyse in order to understand how people respond to disasters in real-time. It provides us with information on the specific experiences of people present in, and even outside, the spatial context of the disaster. Developing more robust analyses that look into this data will help us study human behavioural responses to diaster-related events.
+
 
 ## References
 
