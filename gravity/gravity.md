@@ -8,9 +8,9 @@ title: Gravity Model of Spatial Interaction
 3. [Target Features Preprocessing Model](assets/TargetFeaturesPreprocessing2.model3)
 4. [Homeland Security Processing Model](assets/HomelandSecurityPreprocessing.model3)
 
-## Web Map
+### [Web Map of Results](assets/)
 
-![map](assets/mapimage.png)
+[![map](assets/mapimage.png)](assets/)
 
 
 ### [The Gravity Model](assets/GravityModel.model3)
@@ -55,9 +55,13 @@ Hospital catchments generated from the Gravity Model above generally align with 
 ### Data and References used in this analysis
 
 1. *Hospitals:* Point layer taken from the [Homeland Security data site](https://hifld-geoplatform.opendata.arcgis.com/datasets/6ac5e325468c4cb9b905f1728d6fbf0f_0)
-2. *Towns:* Geopackage file and polygon layer taken from the American Community Survey 2018. Population by town in New England and Middle Atlantic States was compiled by Joe Holler.
+2. *Towns:* Geopackage file and polygon layer taken from the American Community Survey (ACS) 2018. Population by town in New England and Middle Atlantic States was compiled by Joe Holler based on the 5-year average of the ACS data. [NE_Towns](assets/data/netown.gpkg)
 3. *Connecticut Mainland Polygon:* Polygon layer taken from [Connecticut GIS Open Data Website](https://ct-deep-gis-open-data-website-ctdeep.hub.arcgis.com/datasets/connecticut-mainland-polygon?geometry=-75.593%2C40.778%2C-69.913%2C42.218)(Thanks to Steven for finding this)
 4. *Dartmouth Atlas HSAs:* Polygon layer taken from [Dartmouth Atlas of Health Care Hospital Services Areas (HSAs)](https://atlasdata.dartmouth.edu/downloads/supplemental#boundaries)
 
 **Other References:**
 1. *Gravity model formula* taken from Rodrigue's ["The Geography of Transport Systems"](https://transportgeography.org/contents/methods/spatial-interactions-gravity-model/)
+
+### Acknowledgements
+
+Many thanks to the other students I worked with on this assignment - Maddie Tango, Steven Montilla Morantes, and Jackson Mumper - for their contributions in collaboratively creating the models.
