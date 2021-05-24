@@ -12,7 +12,7 @@ First replication study by Holler, J. 2021 (in preparation). Hurricane Dorian vs
 
 Replication Author: Sanjana Roy
 
-Replication Materials Available at: [RE-Dorian](RE-Dorian)
+Replication Materials Available at: [Forked RE-Dorian Repository](RE-Dorian)
 
 Created: `22 May 2021`
 Revised: `24 May 2021`
