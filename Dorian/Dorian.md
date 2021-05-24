@@ -66,18 +66,23 @@ Below is a workflow of the methodology used for this analysis. The code behind t
 *Figure 1.*
 
 ![Word Analysis](results/figures/Tornado_uniquewords.png)
+
 *Figure 2.*
 
 ![Word network](results/figures/Tornado_wordnetwork.png)
+
 *Figure 3.*
 
-![Twitter Activity](results/figures/Tornado_tweetlocations2.png)
+![Twitter Activity](results/figures/Tornado_tweetlocations3.png)
+
 *Figure 4.*
 
-![Hot Spot Analysis](results/figures/Tornado_tweetclusters.png)
+![Hot Spot Analysis](results/figures/Tornado_tweetclusters2.png)
+
 *Figure 5. Breaks and colors from http://michaelminn.net/tutorials/r-point-analysis/ and based on 1.96 as the confidence level interval for z-scores*
 
-![NTDI Map](results/figures/Tornado_ndti.png)
+![NTDI Map](results/figures/Tornado_ndti2.png)
+
 *Figure 6.*
 
 - Add county boundaries to maps
@@ -103,7 +108,8 @@ Provide a summary and interpretation of your key findings in relation to your re
 
 
 ![NOAA Reports](results/figures/noaa_Reports.png)
-Figure 7. Thanks to Emma Clinton for the source I saw on her blog
+
+*Figure 7. Thanks to Emma Clinton for the source I saw on her blog*
 
 Similar to the findings of Wang et al. (2016), the observed twitter activity surrouding tornados largely corresponded with the eastward movement of tornado activity from the period of April 29th to May 5th. Figure 1 shows peaks of tornado-related twitter activity on April 29th and from May 3rd to May 5th. The data that was obtained was concentrated in Mississippi with tweets from surrounding states included in the 300 miles stemming from Jackson, MI. The 29th of May showed tornado activity present in Texas and not Mississippi, and therefore, peaks in tornado-related tweets would have been from areas of Texas that fell within the mile radius, such as Dallas, TX. However, during the period of May 3rd to May 5th, tornado activity peaked for many of the Southern belt of states, including Mississippi, (Figure 7) explaining the trends in Figure 1 during this time period. Figure 6 also shows a clear focus on tornado-related witter activity, compared to baseline twitter activity, around the Mississippi area and parts of Texas from a normal level. This indicates people were utilizing twitter more than usual to reach out to others and spread word on the tornado occurrence.
 
