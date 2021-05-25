@@ -22,7 +22,7 @@ Hi, my name is Sanjana and I'm an Architecture and Environmental Studies joint m
 
 ### [Riparian Trees and Flood Zones in Dar es Salaam](PostGISProject/RipBuffer.md)
 
-[![RiparianTrees](PostGisProject/assets/interactive_map.png)](PostGISProject/RipBuffer.md)
+[![RiparianTrees](PostGisProject/assets/tanzaniamap.png)](PostGISProject/RipBuffer.md)
 
 ### [Replication of Vulnerability Modeling for Sub-Saharan Africa](Malcomb/Malcomb.md)
 

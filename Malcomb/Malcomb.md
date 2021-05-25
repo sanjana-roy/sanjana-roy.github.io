@@ -4,17 +4,17 @@ title: RP- Vulnerability modeling for sub-Saharan Africa
 ---
 
 
-**Replication of Vulnerability modeling for sub-Saharan Africa**
+**Replication of Vulnerability Modeling for Sub-Saharan Africa**
 
 Original study *by* Malcomb, D. W., E. A. Weaver, and A. R. Krakowka. 2014. Vulnerability modeling for sub-Saharan Africa: An operationalized approach in Malawi. *Applied Geography* 48:17–30. DOI:[10.1016/j.apgeog.2014.01.004](https://doi.org/10.1016/j.apgeog.2014.01.004)
 
 Replication Authors:
-Sanjana Roy, Joseph Holler, Kufre Udoh, Open Source GIScience students of fall 2019 and Spring 2021
+Sanjana Roy, Maddie Tango, Arielle Landau, Evan Killion, Jackson Mumper, Steven Montilla, Joseph Holler, Kufre Udoh, Open Source GIScience students of fall 2019 and Spring 2021
 
-Replication Materials Available at: [RP-Malcomb](https://github.com/sanjana-roy/RP-Malcomb)
+Replication Materials Available at: [Forked RP-Malcomb Repository](https://github.com/sanjana-roy/RP-Malcomb)
 
 Created: `29 April 2021`
-Revised: `2 May 2021`
+Revised: `24 May 2021`
 
 ## Abstract
 
@@ -35,44 +35,85 @@ The study by Malcomb et al. (2014) attempts to create a multi-criteria analysis 
 **Figure 1.** Malcomb et al. (2014) Table 2 showing weighted indicators by metatheme
 
 **ADAPTIVE CAPACITY**
-Data from the Demographic Health Survey (DHS) from 2004-2010, conducted by the U.S. agency for International Development (USAID) was used to to model household dynamics and socio-economic data, including the 'access' and 'assets' criteria.
+Data from the Demographic and Health Survey (DHS) Program from 2004-2010, conducted by the U.S. agency for International Development (USAID) was used to to model household dynamics and socio-economic data, including the 'access' and 'assets' criteria. The DHS Program collects nationally-representative household-level data on a "wide range of monitoring and impact indicators in the areas of population, health, and nutrition" from over 90 developing countries (DHS GPS Manual). These indicators are created based on their relevance within that country as well as their capacity for cross-country comparison. Standard DHS surveys are conducted every 5 years to allow for comparisons over time, with interim surveys conducted in between at smaller scales.
+
+DHS data is collected by 'clusters', which can be described as census enumeration areas, consisting of multiple households that can form anything ranging from villages in rural areas to urban blocks (DHS GPS Manual). GPS locations are collected at the center of each cluster, and therefore, each household in a cluster is assigned the same coordinates. The DHS survey process takes place at a large scale of 250 - 500 clusters and involves conducting interviews through questionnaires and manually collecting GPS data at the cluster level through users trained in GPS data collection. This process allows for inevitable inconsistency and often, incompleteness, in the data. This uncertainty in the data is accounted for by the use of specific coded phrases indicating missing data, unknown responses, etc. ([DHS Data Quality and Use Site](https://www.dhsprogram.com/data/Data-Quality-and-Use.cfm)).
+
+Malcomb et al.(2014) aggregated DHS survey cluster points into 250 traditional authorities spread across Malawi, allowing for analysis at an appropriate scale. The authors selected indicators from the data that allowed them to form their 'metathemes' of access and assets, including indicators such as land, livestock, health care, labour, water, etc.:
 
 **Assets** are important coping strategies to understand vulnerability, adaptive capacity, and resilience. The following indicators were determined to increase or decrease household resilience in the context of climate-induced disasters or shocks:
-1. Number of Livestock units - None/More than 95/Unknown
-2. Number of Household members sick in the past 12 months - member very sick for 3+ months No/Yes/Don't Know
-3. Arables land (hectares) - 95/95 or more/unknown
-4. Wealth index score - Poorest/Poorer/Middle/Richer/Richest
-5. Number of Orphans in a household - Number of orphans and vulnerable children
+
+THEORY | INDICATOR | VALUE   
+-------|-----------|-------
+Livestock | Number of animals per HH | None/More than 95/Unknown
+Good Health | Number of HH members sick in the past 12 months for 3+ months| No/Yes/Don't Know
+Arable Land | Amount of arable land per HH | 95/95 or more/unknown
+Money | Wealth index (based on owned assets) | Poorest/Poorer/Middle/Richer/Richest
+Orphan Care | Number of Orphans or vulnerable children in HH | Number of orphans or vulnerable children
 
 **Access** indicators covered a wide range of areas, including resources, healthcare, education, markets, insurance, infrastructure, water, and sanitation:
-6. Time to water source - On premises/Don't know
-7. Electricity - Has electricity Yes/No
-8. Type of Cooking Fuel - Electricity, LPG/Natural gas, Natural gas, Biogas, Kerosene, Coal/lignite, charcoal, wood, straw/shrubs/grass, agricultural crop, animal dung, no food cooked, other
-9. Sex of Head of Household - Male/Female
-10. Own a Cell Phone - Yes/No
-11. Own a Radio - Yes/No
-12. House Setting - Urban/Rural
 
-**LIVELIHOOD SENSITIVITY** data was acquired through the Famine Early Warnings Systems Network (FEWSNET) who conducted interviews in Malawi in collaboration with the Malawi Vulnerability Assessment Committee (MVAC) and the USAID. Livelihood zones were established based on households sharing similar options for obtaining food and income and divided into wealth groups of 'Poor', 'Middle', and 'Better-Off'. Using this data, four variables from livelihood zones were developed to evaluate the sensitivity of livelihoods. Data from the different Livelihood zones were extracted based on these indicators. These were then converted into percentages based on the respective formulas:
-13. Percent of food poor households obtained from their own farms = crops as source of food (%)
-14. Percent of income that poor households obtain from wage labour = (labor/total) * 100
-15. Percent of income from cash crops - percent labor income that is susceptible to market shocks = (crops/total) * 100
-16. Disaster Coping Strategy - Ecological destruction associated with livelihood coping strategies during times of crisis in each zone. Function of baseline access, possible hazards, and response strategies. Response strategies broken down into expanding existing strategies and distress strategies. Hazards broken down into periodic and chronic. = % income from practices that would lead to ecological destruction. Determining these practices was vague and there was much uncertainty in which practices were considered in the Malcomb et al. (2014) study.
+THEORY | INDICATOR | VALUE   
+-------|-----------|-------
+Basics | Time to water source | On premises/Don't know
+Basics | Electricity | Has electricity Yes/No
+Basics | Type of Cooking Fuel | Electricity, LPG/Natural gas, Natural gas, Biogas, Kerosene, Coal/lignite, charcoal, wood, straw/shrubs/grass, agricultural crop, animal dung, no food cooked, other
+Power and Decision Making | Female Headed HH | Yes/No
+Media and Information | Own a Cell Phone | Yes/No
+Technology Sharing | Own a Radio | Yes/No
+Market Access | House Setting | Urban/Rural/Peri-Urban
 
-For the above three metathemes (Assets, Access, and Livelihood Sensitivity), indicators were converted to a 1-5 scale to match the Malcomb et al. (2014) study. There scores were then used to calculate capacity scores based on table 2 in the paper by weighting them with percentages outlined in the model. These percentages were then converted to a 0-20 scale, by multiplying by 20, to resemble the range of the original study. Livelihood sensitivity and adaptive capacity were then rasterized to calculate vulnerability along with physical exposure.
+**LIVELIHOOD SENSITIVITY**
 
-**PHYSICAL EXPOSURE** data was acquired through the United Nations Environmental Program (UNEP) Global Disaster Risk Platform, which provides easily interpretable data on the risk of flood and drought exposure, two variables used under this metatheme. UNEP's Global Resource Information Database (GRID)- Europe designed this information for the global interpretation of these two variables in terms of risk evaluation, vulnerability, and information and early-warning.
-17. Estimated Risk for Flood Hazard - Modeled using global data using estimated index 1 - 5 (extreme)
-18. Estimated Risk to Drought Events - based on Standardized Precipitation Index. Unit as expected average annual population exposed
+This metatheme used [Famine Early Warnings Systems Network (FEWSNET)](https://fews.net/fews-data/335) data to assess livelihood sensitivity for nineteen livelihood zones. This data was developed by FEWSNET, who conducted interviews in Malawi in collaboration with the Malawi Vulnerability Assessment Committee (MVAC) and the USAID between May and July of 2003 to establish these zones. Livelihood zones (LZ) are areas where households share similar options for obtaining food and income. Maps of these LZs are produced through multi-day workshops where stakeholders and experts identify these different zones based on a number of factors, including elevation, land cover, market accessibility, etc. In 2003, nineteen different livelihood zones were established and aggregated. Wealth groups within each Livelihood zone were divided into categories of 'Poor', 'Middle', and 'Better-Off'. Using this data, four variables from livelihood zones were developed to evaluate the sensitivity of Malawi's livelihoods. Data from the different Livelihood zones were extracted based on these indicators. These were then converted into percentages based on the respective formulas. It is unclear as to how Malcomb et al. (2014) incorporated livelihood zones into their methods and results. This replication study joined livelihood ids to the existing DHS clusters that they encompassed.
+
+THEORY | INDICATOR | VALUE   
+-------|-----------|-------
+Ability to meet Food Needs | % food intake from personal farm | % Crops as source of food
+Income Source | % Income poor HH obtain from wage labour | (Labor/total) * 100
+Cash Crop Exposure | % Income from cash crops | % Labor income that is susceptible to market shocks = (crops/total) * 100
+Ecological Coping Effect | Access to alternative forms of income | % Income from practices that would lead to ecological destruction
+
+The last variable described 'ecological destruction' as that associated with livelihood coping strategies during times of crisis in each zone: function of baseline access, possible hazards, and response strategies. Response strategies were broken down into expanding existing strategies and distress strategies. Hazards were broken down into periodic and chronic. Determining these practices was vague and there was much uncertainty in which practices were considered in the Malcomb et al.(2014) study.
+
+**For the above three metathemes (Assets, Access, and Livelihood Sensitivity)**, indicators were converted to a 1-5 scale to match the Malcomb et al. (2014) study. There scores were then used to calculate capacity scores based on Table 2 in the paper by weighting them with percentages outlined in the model. These percentages were then converted to a 0-20 scale, by multiplying by 20, to resemble the range of the original study. Livelihood sensitivity and adaptive capacity were then rasterized to calculate vulnerability along with physical exposure.
+
+**PHYSICAL EXPOSURE** data was acquired through the United Nations Environmental Program (UNEP) Global Disaster Risk Platform, which provides easily interpretable raster data on the risk of flood and drought exposure, two variables used under this metatheme. UNEP's Global Resource Information Database (GRID)- Europe designed this information for the global interpretation of these two variables in terms of risk evaluation, vulnerability, and information and early-warning. While more specific data to Malawi's context may have been more beneficial, this data offered the greatest coverage of the analyses area. The drought layer includes an estimate of global annual drought repartition based on global monthly precipitation data (Climatic Research Unit, University of East Anglia) and a Standardized Precipitation Index (Brad Lyon, IRI, Columbia University) from 1980 to 2001.
+
+THEORY | INDICATOR | VALUE   
+-------|-----------|-------
+Floods and Rain Variability | Estimated Risk for Flood Hazard | Modeled using global data using an estimated index ranging 1 (low) to 5 (extreme)
+Drought and Dry Spells | Estimated Risk to Drought Events | Expected average annual (2010) population exposed
+
 Bilinear sampling was used for the drought layer to average continuous population exposure values and this layer was also reclassified into the quintile classification (1-5). Near sampling was used for the flood layer to preserve integer values.  
 
 ### Analytical Specification
 
-The original study was conducted using ArcGIS and STATA, but does not state which versions of these software were used.
-The replication study will use R.
+The original study was conducted using ArcGIS and STATA, but does not state which versions of these software were used. The replication study will use R.
 
 ## Materials and Procedure
 
+### Original Workflow
+
+This workflow was created in response to our first reading of the Malcomb et al. (2014) study:
+
+```
+## Step 1: Processing of Data
+  2004-2010 DHA data points (for each cluster): District --> DISAGGREGATED --> villages --> DISAGGREGATED --> traditional authorities
+
+## Step 2:
+  UNEP/GRID Europe + FEWSNET --> RASTER --> WEIGHTED (by values in Table 1 and normalized between 0 and 5)
+
+## Step 3: Creating the Model of Vulnerability
+  CALCULATE --> Household resilience = adaptive capacity + livelihood sensitivity - biophysical exposure
+
+```
+
+### Revised Workflow
+
+This revised workflow was created after going through the code prepared by Joseph Holler and Kufre Udoh, based on the Malcomb et al. (2014) reproduction. This can be found [here]():
+
+```
 1. Data Preprocessing:
     - Download traditional authorities: MWI_adm2.shp
 2. Adding Traditional Authorities (TA) and Livelihood Zone (LZ) ids to DHS clusters
@@ -93,11 +134,36 @@ The replication study will use R.
     - Uses nearest neighbor resampling for flood risk to preserve integer values
     - Removing factors from flood layer and recasting them as integers
     - Clipping TAs with LZs to remove lake
-    - Rasterizing final TA capacity layer
-15. Masking flood and drought layers
-16. Reclassify drought raster into quantiles
-17. Add all RASTERs together to calculate final output:  final = (40 - geo) * 0.40 + drought * 0.20 + flood * 0.20 + LHZ * 0.20
-18. Using zonal statistics to aggregate raster to TA geometry for final calculation of vulnerability in each traditional authority
+15. Rasterizing final TA capacity layer
+16. Masking flood and drought layers
+17. Reclassify drought raster into quantiles
+18. Add all RASTERs together to calculate final output:  final = (40 - geo) * 0.40 + drought * 0.20 + flood * 0.20 + LHZ * 0.20
+19. Using zonal statistics to aggregate raster to TA geometry for final calculation of vulnerability in each traditional authority
+```
+
+### Final Workflow: Additions to Revised Workflow
+
+Our final workflow involved the addition of calculated indicators from the FEWSNET livelihood zones data as well as procedures to compare to the Malcomb et al. (2014) results:
+
+```
+Livelihood sensitivity calculated after Step 12 (categorizing capacities using natural jenks method):
+  - Pre- process livelihood data from FEWSNET livlihood zone spreadsheets with detailed information on surveys and results
+  - Disaster coping strategy: % income from selling firewood, wild foods or grasses (income from   firewood + income from grasses + income from wild foods / total income * 100)
+  - %Income from Cash Crops: (cash from crops / total income * 100)
+  - %Food from own farm: (% of crops reported as sources of food)
+  - %Income from wage labor: (labour etc. as source of cash / total income * 100)
+  - Scale livelihood sensitivity fields on scale of 1 - 5 to match Malcomb et al.
+  - Weight capacity based on table 2 in Malcomb et al.
+  - Calculate livelihood sensitivity by summing all weighted fields
+
+After Step 19 (using zonal statistics), results from our reproduction study were compared with Malcomb et al. results:
+  - Figures 4 and 5 from the Malcomb et al. study were georeferenced, using the QGIS (3.16) georeferencer tool, by comparing them to traditional authority boundaries and extracting color values from the original maps using zonal statistics
+  - The Adaptive Capacity map (Figure 4), visualized in a discrete choropleth, used mean values of red to recreate the four resilience classes  
+  - For the Vulnerability map (Figure 5), visualized in a continuous raster, a vectorised raster grid was used, of the same extent and resolution as the vulnerability output, to extract the mean value of blue, used to indicate the relative vulnerability score
+  - Maps were compared by first scaling the outputs on a scale of 0 to 1 in R and creating difference maps
+  - The Spearman's Rho correlation test was used to test the agreement between our reproduction results and the Malcomb et al. (2014) study
+
+```
 
 ## Replication Results
 
