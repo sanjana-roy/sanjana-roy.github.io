@@ -5,11 +5,11 @@ title: Riparian Trees and Flood Zones in Dar es Salaam
 
 This was a collaborative project between [Sanjana Roy](https://sanjana-roy.github.io) and [Jackson Mumper](https://jackson-mumper.github.io).
 
-April 7, 2021
+Created: `April 7, 2021` Revised: `May 24, 2021`
 
 ## Introduction
 
-This lab focuses on the relationship between riparian trees and flood zones in Dar es Salaam. Along with the countless other benefits of urban vegetation, vegetation around river systems has been observed to significantly reduce flood levels [(Stanton, 2020)](https://krex.k-state.edu/dspace/handle/2097/40582). Using Dar es Salaam as a landscape, we wanted to see whether urban wards with higher densities of riparian trees also saw low incidence of flooding. If true, this would lend credence to models of urban resilience through nature-based solutions and provide useful information for planners and developers in the region.
+This study focuses on the relationship between riparian trees and flood zones in Dar es Salaam. Along with the countless other benefits of urban vegetation, vegetation around river systems has been found to correspond with lower levels of flood risk [(Stanton, 2020)](https://krex.k-state.edu/dspace/handle/2097/40582). Using Dar es Salaam as a landscape, we wanted to see whether urban wards with higher densities of riparian trees also saw lower incidences of flooding, similarly observed in other areas of the world. If true, this would lend credence to models of urban resilience through nature-based solutions and provide useful information for planners and developers in the region.
 
 ## Data Sources
 
@@ -24,7 +24,7 @@ The full script used in this analysis can be downloaded [here](RiparianTrees.sql
 
 ## Results
 
-![Static map](assets/static_map.png)
+![Static map](assets/tanzaniamap.png)
 
 A full, interactive map of riparian trees, riparian buffers, flood zones, and ward boundaries in our study region can be found [here](assets/index.html).
 
@@ -32,11 +32,14 @@ A full, interactive map of riparian trees, riparian buffers, flood zones, and wa
 
 ![scatterplot](assets/graph.png)
 
+
+## Discussion
+
 As shown in the scatter plot, there is actually a positive correlation between riparian trees and flooded areas. This means that wards with higher densities of tree cover near rivers had experienced more flooding than those farther away. This goes against our original hypothesis that riparian trees would reduce flood areas on Dar es Salaam. However, the correlation is weak, and the R^2 value is low enough to warrant further investigation.
 
-While these data go against traditional understandings of the effects of riparian vegetation on flooding, there are a few aspects of our methodology that might have contributed to this outcome. To start, certain parts of the city that saw greater flooding were closer to the mouth of the river. This tends to be the widest and shallowest section of a river, therefore making it most likely to flood. In addition, forest patches along the river were mostly found downstream, near the coast. Because of this, downstream wards tended to have both the highest incidence of flooding and the largest observed riparian trees, leading to a positive correlation that might not be the result of a causal relationship.
+While these data go against traditional understandings of the effects of riparian vegetation on flooding, there are a few aspects of our methodology that might have contributed to this outcome. To start, certain parts of the city that saw greater flooding were closer to the mouth of the river. This tends to be the widest and shallowest section of a river, therefore making it most likely to flood. In addition, forest patches along the river were mostly found downstream, near the coast. Because of this, downstream wards tended to have both the highest incidence of flooding and the largest observed riparian trees, leading to a positive correlation that might not be the result of a causal relationship. Furthermore, flooded areas are also largely influenced by terrain, and without topographical data, it would be difficult to discern the potential for tree cover in Dar Es Salaam to aid in decreasing the risk of flooding.
 
-Furthermore, our methods of aggregating data posed as an issue given the nature of the ward boundaries in Dar es Salaam. Ward boundaries follow river systems, causing both flood areas and riparian buffers to be split by multiple wards through our analysis. Therefore, aggregation of data by wards is perhaps not the most logical way to conduct this analysis. A raster-based approach, which would take into account existing trees through satellite data, without relying on the tree “point” contributions of the local community would have led to more accurate results.
+Our methods of aggregating data also posed as an issue given the nature of the ward boundaries in Dar es Salaam. Ward boundaries follow river systems, causing both flood areas and riparian buffers to be split by multiple wards through our analysis. Therefore, aggregation of data by wards is perhaps not the most logical way to conduct this analysis. A raster-based approach, which would take into account existing trees through satellite data, without relying on the tree “point” contributions of the local community would have led to more accurate results. Additionally, data could also be aggregated by natural boundaries, such as by catchements or watersheds, rather than social boundaries, which would consist of a more logical spatial division of the landscape for this analysis.
 
 Our analysis only used OSM layers of tree point data and forest polygon data to account for riparian vegetation. However, the presence of other types of land cover, such as parks, cemeteries, or wetlands, may also either contain trees or contribute to lower rates of flooding in a given area. This analysis could be further improved through assessing the ability of different types of land cover to contribute to flood resilience and adding these layers to our model.
 
@@ -46,5 +49,6 @@ This was also apparent in OSM’s tree data. Locations of individual trees were 
 
 Although this methodology is flawed, further investigation with more robust techniques could help urban resilience planning in Dar es Salaam and future projects. A more robust analysis could include:
 1. A greater array of potential confounding variables
-2. More accurate data, potentially satellite imagery or raster data
-3. Aggregation by river/stream rather than by wards
+2. Integrating and considering the terrain using topographical data
+3. More accurate data, potentially satellite imagery or raster data to identify land cover types
+4. Aggregation by catchment are or watersheds than by wards

@@ -61,15 +61,16 @@ SELECT st_multi(st_intersection(treespolygon.geom, rip_buffer.geom))::geometry(m
 FROM treespolygon INNER JOIN rip_buffer
 ON st_intersects(treespolygon.geom, rip_buffer.geom);
 
---Dissolve geometries of trees
-CREATE TABLE treedissolve AS
-SELECT st_union(geom)::geometry(multipolygon,32737) as geom
-FROM riptrees;
+--Grouping trees by ward
+CREATE TABLE wardtreegroup AS
+SELECT wards.ward_name, wards.flood_area, st_multi(st_intersection(riptrees.geom, wards.utmgeom))::geometry(multipolygon,32737) as geom
+FROM wards LEFT JOIN riptrees
+ON st_intersects(riptrees.geom, wards.utmgeom);
 
+--Dissolve geometries of trees
 CREATE TABLE wardriptrees AS
-SELECT wards.ward_name, wards.flood_area, st_multi(st_intersection(treedissolve.geom, wards.utmgeom))::geometry(multipolygon,32737) as geom
-FROM wards LEFT JOIN treedissolve
-ON st_intersects(treedissolve.geom, wards.utmgeom);
+SELECT st_union(geom)::geometry(multipolygon,32737) as geom
+FROM wardtreegroup;
 
 -- Find areas of riparian tree cover in each ward
 ALTER TABLE wardriptrees
