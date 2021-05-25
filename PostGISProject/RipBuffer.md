@@ -24,9 +24,9 @@ The full script used in this analysis can be downloaded [here](RiparianTrees.sql
 
 ## Results
 
-![Static map](assets/tanzaniamap.png)
+![Static map](assets/tanzaniamap2.png)
 
-A full, interactive map of riparian trees, riparian buffers, flood zones, and ward boundaries in our study region can be found [here](assets/index.html).
+A full, interactive map of riparian trees, riparian buffers, flood zones, and ward boundaries in our study region can be found [here](assets_copy/index.html).
 
 **Correlation between riparian trees and incidence of flooding by ward in Dar es Salaam**
 

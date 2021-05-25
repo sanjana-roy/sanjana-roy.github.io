@@ -107,11 +107,9 @@
                 mouseover: highlightFeature,
             });
             var popupContent = '<table>\
-
                     <tr>\
                         <td colspan="2">' + (feature.properties['ward_name'] !== null ? autolinker.link(feature.properties['ward_name'].toLocaleString()) : '') + '</td>\
                     </tr>\
-
                     <tr>\
                         <td colspan="2">Flood Area (m2): ' + (feature.properties['flood_area_m2'] !== null ? autolinker.link(feature.properties['flood_area_m2'].toLocaleString()) : '') + '</td>\
                     </tr>\
