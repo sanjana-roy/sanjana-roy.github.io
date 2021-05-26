@@ -9,7 +9,7 @@ Original study *by* Kang, J. Y., A. Michels, F. Lyu, Shaohua Wang, N. Agbodo, V.
 
 Reproduction Author: Sanjana Roy and the OpenSource GIScience students of Spring 2021
 
-Reproduction Materials Available at: [Forked RP-Kang Repository](github repository link)
+Reproduction Materials Available at: [Forked RP-Kang Repository](https://github.com/sanjana-roy/RP-Kang)
 
 Created: `19 May 2021`
 Revised: `25 May 2021`
@@ -40,8 +40,7 @@ A major inaccuracy in the code stemmed from the boundary effects of this analysi
 
 ``` python
 if not os.path.exists("data/Chicago_Network_Buffer.graphml"):
-    #ambiguous place names but would need to look into OSM connection with API
-    G = ox.graph_from_place('Chicago', network_type='drive', buffer_dist = 30000) # pulling the drive network the first time will take a while
+    G = ox.graph_from_place('Chicago', network_type='drive', buffer_dist = 30000)
     ox.save_graphml(G, 'Chicago_Network_Buffer.graphml')
 else:
     G = ox.load_graphml('Chicago_Network_Buffer.graphml', node_type=str)
@@ -57,12 +56,12 @@ Other adjustments to the code involved changing the colour ramp of the final out
 ![Original Map](assets/original_map2.png)
 
 ### Replicated Map
-![Replicated Map](assets/replication_map2.png)
+![Reproduced Map](assets/replication_map2.png)
 
 
 **Original Map** | **Reproduced Map**
 -------------|---------------
-![Original Map](assets/original_map2) | ![Replicated Map](assets/replication_map2)
+![Original Map](assets/original_map2.png) | ![Replicated Map](assets/replication_map2.png)
 
 **Original Road Network** | **Reproduced Road Network**
 ![Original Network](assets/original_roadnetwork.png) | ![Replicated Network](assets/replication_roadnetwork.png)
