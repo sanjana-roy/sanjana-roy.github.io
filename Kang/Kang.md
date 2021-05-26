@@ -22,7 +22,7 @@ The onset of the COVID-19 pandemic fueled a global need for accessible healthcar
 
 ## Materials and Methods
 
-[Here is a link to the original code]()
+[Here is the original code](COVID-19Acc.ipynb)
 
 Kang et al. (2020) utilized four different data sources for this analysis:
 1. **Hospital dataset** including number of beds in ICUs and number of ventilator units per hospital - provided by the [Illinois Department of Public Health (IDPH)](https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals/explore)
@@ -34,7 +34,7 @@ Hospitals that were military, children, psychiatric, or rehabilitation facilitie
 
 ### Changes made to Original Code
 
-[Here is the link to the updated and revised code]()
+[Here is the revised code](COVID-19AccEdited.ipynb)
 
 A major inaccuracy in the code stemmed from the boundary effects of this analysis. Nodes that were created near the edges of Chicago had hospitals outside of Chicago (but within 15 miles) attach to these nodes, overestimating the number of beds or ventilators that would be accessible to people in that area. Since the road network only extended to the boundaries of Chicago, travel-time distance was not accounted for. Therefore, the first change that was made in the code was to extend the road network around 30 km (larger than 15 miles), using a buffer, outside of Chicago so that hospitals would not be unevenly spatially distributed. Here are the changes out class collaboratively made to the code:
 
@@ -52,19 +52,15 @@ Other adjustments to the code involved changing the colour ramp of the final out
 
 ## Results and Discussion:
 
-### Original Map from the Kang et al. (2020) code
+### Original Road Network | Reproduced Road Network
+--------------------------|----------------------------
+![Original Network](assets/original_roadnetwork.png) | ![Replicated Network](assets/replication_roadnetwork.png)
+
+### Original Map from Kang et al. (2020) code
 ![Original Map](assets/original_map2.png)
 
-### Replicated Map
+### Reproduced Map
 ![Reproduced Map](assets/replication_map2.png)
-
-
-**Original Map** | **Reproduced Map**
--------------|---------------
-![Original Map](assets/original_map2.png) | ![Replicated Map](assets/replication_map2.png)
-
-**Original Road Network** | **Reproduced Road Network**
-![Original Network](assets/original_roadnetwork.png) | ![Replicated Network](assets/replication_roadnetwork.png)
 
 
 The original map of healthcare accessibility produced by the Jupyter code shows very low accessibility in areas of the North-West and South Chicago. When comparing the two road networks, we can see that the original network did not extend too far into the North-West as the Chicago grid demonstrates. When comparing this to the replicated map, we can see that low values in the original map were created due to the limitations of the extended road network, which snapped hospitals off the boundary of Chicago to network nodes near the boundary. The buffered network results in a map where the North-West has significantly higher levels of accessibility as hospitals were more accurately snapped to the nearest respective node. This change in the code reveals the importance of considering boundary and edge effects in geographic studies, which can largely influence the results.
@@ -78,3 +74,7 @@ Furthermore, Kang et al. (2020) added weights to values within the concentric co
 ## Conclusion
 
 As with any study of spatial analysis, digitally analysing real-world phenomenon inevitably introduces many avenues for uncertainty. The COVID-19 pandemic has led many researchers to investigate patterns of human behaviour and need during these difficult times. Kang et al. (2020) produces a study that is easily reproducible given the OpenSource code they provide along with their research. Work like this is essential to understanding patterns of access to healthcare resources across different contexts. A more thorough investigation into boundary effects and network calculations as well as the inclusion of all steps of data cleaning into the code can increase the robustness of this analysis and its capacity for reproduction and replicability. Overall, the study provides a good first step into analysing spatial accessibility to COVID-19 healthcare resources and its OpenSource nature allows for contributions from other researchers to provide suggestions and feedback on the study in order to improve its applicability in our world, truly utilizing the benefits of the OpenSource field.
+
+## Acknowledgements
+
+Thank you to the OpenSource GIScience class with whom I worked collaboratively to make changes and adjustments to the code.
