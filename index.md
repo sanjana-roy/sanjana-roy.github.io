@@ -6,7 +6,7 @@ layout: default
 
 # GEOG 323: OpenSource GIScience | [Course Website](https://gis4dev.github.io)
 
-Hi, my name is Sanjana and I'm an Architecture and Environmental Studies joint major and Biology minor at Middlebury College. As someone interested in how urban and natural environments correlate, I find GIS to be a very useful skill to develop. This website is a documentation of the projects I have done under the OpenSource GIScience course, and reflections on the material we are working with as well as wider questions in the open-source and GIS fields.
+Hi, my name is Sanjana and I'm an Architecture and Environmental Studies joint major and Biology minor at Middlebury College. As someone interested in how urban and natural environments correlate, I find GIS to be a very useful skill to develop. This website is a documentation of the projects I have done under the OpenSource GIScience course, where we learnt of different techniques and software used in GIS research, largely focusing on the replication and reproduction of studies on spatial analysis. This site also contains reflections on the material we have worked with and on wider questions in the open-source and GIS fields.
 
 ## Course Blog Posts
 
@@ -32,7 +32,7 @@ Click on any of the links below to view reports of the studies I conducted in th
 
 ### [Riparian Trees and Flood Zones in Dar es Salaam](PostGISProject/RipBuffer.md)
 
-[![RiparianTrees](PostGisProject/assets/interactive_map.png)](PostGISProject/RipBuffer.md)
+[![RiparianTrees](PostGISProject/assets/tanzaniamap2.png)](PostGISProject/RipBuffer.md)
 
 ### [Replication of Vulnerability Modeling for Sub-Saharan Africa](Malcomb/Malcomb.md)
 
