@@ -52,9 +52,11 @@ Other adjustments to the code involved changing the colour ramp of the final out
 
 ## Results and Discussion:
 
-### Original Road Network | Reproduced Road Network
---------------------------|----------------------------
-![Original Network](assets/original_roadnetwork.png) | ![Replicated Network](assets/replication_roadnetwork.png)
+### Original Road Network
+![Original Network](assets/original_roadnetwork.png)
+
+## Reproduced Road Network
+![Replicated Network](assets/replication_roadnetwork.png)
 
 ### Original Map from Kang et al. (2020) code
 ![Original Map](assets/original_map2.png)
