@@ -62,7 +62,7 @@ Other adjustments to the code involved changing the colour ramp of the final out
 
 **Original Map** | **Reproduced Map**
 -------------|---------------
-![Original Map](assets/original_map2.png) | ![Replicated Map](assets/replication_map2.png)
+![Original Map](assets/original_map2) | ![Replicated Map](assets/replication_map2)
 
 **Original Road Network** | **Reproduced Road Network**
 ![Original Network](assets/original_roadnetwork.png) | ![Replicated Network](assets/replication_roadnetwork.png)
@@ -77,6 +77,5 @@ Similarly, the types of hospitals as well as their distance from the boundary of
 Furthermore, Kang et al. (2020) added weights to values within the concentric convex hull layer in order to calculate accessibility measurements. However, the values of these weights are not justified anywhere in the paper. Investigating how the analysis is sensitive to these weights and whether they are stable over space would help in the replicability of this study in other contexts. Lastly, Kang er al. (2020) also simplified the road network, removing nodes with a value of 0 or with a value less than 10 in order to prevent the formation of smaller egocentric networks. However, removing this data may have implications for the results in how hospitals attach to nodes. Looking into this aspect of the data cleaning and how it affects the analysis would also be useful in determining the importance and efficiency of this step.
 
 ## Conclusion
-With emphasis on the significance of the reproduction study you just completed. Was the study reproducible, and has the reproduction study increased, decreased, or otherwise refined your belief in the validity of the original study? Conclude with any insights, priorities, or questions for future research.
 
-As with any studies of spatial analysis, digitally analysing real-world phenomenon inevitably introduces many avenues for uncertainty. 
+As with any study of spatial analysis, digitally analysing real-world phenomenon inevitably introduces many avenues for uncertainty. The COVID-19 pandemic has led many researchers to investigate patterns of human behaviour and need during these difficult times. Kang et al. (2020) produces a study that is easily reproducible given the OpenSource code they provide along with their research. Work like this is essential to understanding patterns of access to healthcare resources across different contexts. A more thorough investigation into boundary effects and network calculations as well as the inclusion of all steps of data cleaning into the code can increase the robustness of this analysis and its capacity for reproduction and replicability. Overall, the study provides a good first step into analysing spatial accessibility to COVID-19 healthcare resources and its OpenSource nature allows for contributions from other researchers to provide suggestions and feedback on the study in order to improve its applicability in our world, truly utilizing the benefits of the OpenSource field.
