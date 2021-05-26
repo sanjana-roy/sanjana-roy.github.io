@@ -37,8 +37,8 @@ Hi, my name is Sanjana and I'm an Architecture and Environmental Studies joint m
 
 ### [Spatial-Temporal and Content Analysis of Twitter Data](Dorian/Dorian.md)
 
-[![Malawi](Malcomb/assets/results/figures/scatterplot.png)](Malcomb/Malcomb.md)
+[![Malawi](Dorian/results/figures/Tornado_tweetlocations3.png)](Dorian/Dorian.md)
 
 ### [Replication of Spatial Accessibility of COVID-19 Health Resources](Kang/Kang.md)
 
-[![Malawi](Malcomb/assets/results/figures/scatterplot.png)](Malcomb/Malcomb.md)
+[![Kang](Kang/assets/replication_map2.png)](Kang/Kang.md)
