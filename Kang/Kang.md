@@ -22,7 +22,7 @@ The onset of the COVID-19 pandemic fueled a global need for accessible healthcar
 
 ## Materials and Methods
 
-[Here is the original code](COVID-19Acc.ipynb)
+[Here is the original code](assets/COVID-19Acc.ipynb)
 
 Kang et al. (2020) utilized four different data sources for this analysis:
 1. **Hospital dataset** including number of beds in ICUs and number of ventilator units per hospital - provided by the [Illinois Department of Public Health (IDPH)](https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals/explore)
@@ -34,7 +34,7 @@ Hospitals that were military, children, psychiatric, or rehabilitation facilitie
 
 ### Changes made to Original Code
 
-[Here is the revised code](COVID-19AccEdited.ipynb)
+[Here is the revised code](assets/COVID-19AccEdited.ipynb)
 
 A major inaccuracy in the code stemmed from the boundary effects of this analysis. Nodes that were created near the edges of Chicago had hospitals outside of Chicago (but within 15 miles) attach to these nodes, overestimating the number of beds or ventilators that would be accessible to people in that area. Since the road network only extended to the boundaries of Chicago, travel-time distance was not accounted for. Therefore, the first change that was made in the code was to extend the road network around 30 km (larger than 15 miles), using a buffer, outside of Chicago so that hospitals would not be unevenly spatially distributed. Here are the changes out class collaboratively made to the code:
 
