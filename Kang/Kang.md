@@ -55,7 +55,7 @@ Other adjustments to the code involved changing the colour ramp of the final out
 ### Original Road Network
 ![Original Network](assets/original_roadnetwork.png)
 
-## Reproduced Road Network
+### Reproduced Road Network
 ![Replicated Network](assets/replication_roadnetwork.png)
 
 ### Original Map from Kang et al. (2020) code
