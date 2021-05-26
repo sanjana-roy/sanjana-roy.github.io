@@ -96,7 +96,7 @@ tornado <- tornado %>%
 
 ## Discussion
 
-![NOAA Reports](results/figures/noaa_Reports.png)
+![NOAA Reports](results/figures/noaa_Reports2.png)
 
 *Figure 7. Figures obtained from the [NOAA Storm Prediction Center (SPC)](https://www.spc.noaa.gov/climo/reports/210505_prt_rpts.html). Thanks to Emma Clinton for the source I saw on her blog*
 
