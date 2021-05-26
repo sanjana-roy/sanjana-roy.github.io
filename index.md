@@ -19,6 +19,9 @@ Hi, my name is Sanjana and I'm an Architecture and Environmental Studies joint m
 
 ## GIScience Analyses
 
+Click on any of the links below to view reports of the studies I conducted in this class:
+
+
 ### [Gravity Model of Spatial Interaction](gravity/gravity.md)
 
 [![GravityModel](gravity/assets/mapimage.png)](gravity/gravity.md)
@@ -29,7 +32,7 @@ Hi, my name is Sanjana and I'm an Architecture and Environmental Studies joint m
 
 ### [Riparian Trees and Flood Zones in Dar es Salaam](PostGISProject/RipBuffer.md)
 
-[![RiparianTrees](PostGisProject/assets/tanzaniamap2.png)](PostGISProject/RipBuffer.md)
+[![RiparianTrees](PostGisProject/assets/interactive_map.png)](PostGISProject/RipBuffer.md)
 
 ### [Replication of Vulnerability Modeling for Sub-Saharan Africa](Malcomb/Malcomb.md)
 
