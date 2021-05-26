@@ -35,7 +35,7 @@ The study by Malcomb et al. (2014) attempts to create a multi-criteria analysis 
 **Figure 1.** Malcomb et al. (2014) Table 2 showing weighted indicators by metatheme
 
 **ADAPTIVE CAPACITY**
-Data from the Demographic and Health Survey (DHS) Program from 2004-2010, conducted by the U.S. agency for International Development (USAID) was used to to model household dynamics and socio-economic data, including the 'access' and 'assets' criteria. The DHS Program collects nationally-representative household-level data on a "wide range of monitoring and impact indicators in the areas of population, health, and nutrition" from over 90 developing countries (DHS GPS Manual). These indicators are created based on their relevance within that country as well as their capacity for cross-country comparison. Standard DHS surveys are conducted every 5 years to allow for comparisons over time, with interim surveys conducted in between at smaller scales.
+Data from the Demographic and Health Survey (DHS) Program from 2004-2010, conducted by the U.S. agency for International Development (USAID) was used to to model household dynamics and socio-economic data, including the 'access' and 'assets' criteria. The DHS Program collects nationally-representative household-level data on a "wide range of monitoring and impact indicators in the areas of population, health, and nutrition" from over 90 developing countries ([DHS GPS Manual](https://dhsprogram.com/methodology/gps-data-collection.cfm)). These indicators are created based on their relevance within that country as well as their capacity for cross-country comparison. Standard DHS surveys are conducted every 5 years to allow for comparisons over time, with interim surveys conducted in between at smaller scales.
 
 DHS data is collected by 'clusters', which can be described as census enumeration areas, consisting of multiple households that can form anything ranging from villages in rural areas to urban blocks (DHS GPS Manual). GPS locations are collected at the center of each cluster, and therefore, each household in a cluster is assigned the same coordinates. The DHS survey process takes place at a large scale of 250 - 500 clusters and involves conducting interviews through questionnaires and manually collecting GPS data at the cluster level through users trained in GPS data collection. This process allows for inevitable inconsistency and often, incompleteness, in the data. This uncertainty in the data is accounted for by the use of specific coded phrases indicating missing data, unknown responses, etc. ([DHS Data Quality and Use Site](https://www.dhsprogram.com/data/Data-Quality-and-Use.cfm)).
 
@@ -89,7 +89,7 @@ Bilinear sampling was used for the drought layer to average continuous populatio
 
 ### Analytical Specification
 
-The original study was conducted using ArcGIS and STATA, but does not state which versions of these software were used. The replication study will use R.
+The original study was conducted using ArcGIS and STATA, but does not state which versions of these software were used. The replication study will use R (`R 1.4.1103`) along with packages `classint`, `stars`, `sf`, `here`, `dplyr`, `rdhs`, `readr`, `ggplot2`, `s2`, `haven`, and `downloader`.
 
 ## Materials and Procedure
 
@@ -162,7 +162,8 @@ After Step 19 (using zonal statistics), results from our reproduction study were
   - For the Vulnerability map (Figure 5), visualized in a continuous raster, a vectorised raster grid was used, of the same extent and resolution as the vulnerability output, to extract the mean value of blue, used to indicate the relative vulnerability score
   - Maps were compared by first scaling the outputs on a scale of 0 to 1 in R and creating difference maps
   - The Spearman's Rho correlation test was used to test the agreement between our reproduction results and the Malcomb et al. (2014) study
-
+  - Crosstablution of resilience values between the original and reproduced outcomes was visualized in a table
+  - A scatterplot graphing the orignal and reproduced results of raster values was also used for comparison
 ```
 
 ## Replication Results
@@ -172,7 +173,7 @@ After Step 19 (using zonal statistics), results from our reproduction study were
 ![Figure4](assets/results/maps/ac_2010.png)
 **Figure 2.** Digitized map of Figure 4 in Malcomb et al. (2014). Digitization was conducted using the Georeferencer in QGIS
 
-![DiffFigure4](assets/results/maps/diffmap2010.png)
+![DiffFigure4](assets/results/maps/diffmap20102.png)
 **Figure 3.** Difference in results of adaptive capacity from the Malcomb et al. (2014) original study and this replication study
 
 ![CompTable](assets/results/figures/CompTable.png)
@@ -186,7 +187,7 @@ With a Spearman's Rho coefficient of 0.764, the Malcomb et. al (2014) adaptive c
 ![Figure5](assets/results/maps/vulnerability.png)
 **Figure 4.** Digitized map of Figure 5 in Malcomb et al. (2014). Digitization was conducted using the Georeferencer in QGIS
 
-![DiffFigure5](assets/results/maps/diffmapvuln.png)
+![DiffFigure5](assets/results/maps/diffmapvuln2.png)
 **Figure 5.** Difference in results of vulnerability from the Malcomb et al. (2014) original study and this replication study
 
 ![Scatterplot](assets/results/figures/scatterplot.png)
